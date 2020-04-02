@@ -10,7 +10,7 @@ LANGUAGE = 'pt'
 # can be useful in development, but set to False when you're ready to publish
 RELATIVE_URLS = True
 
-THEME = 'pelican-themes/_new-ops-flavialopes.dev'
+THEME = 'themes/flavialopes.dev'
 HEADER = 'theme/images/avatar.jpg'
 SITEICON = 'theme/images/favicon.ico'
 #MONTH_ARCHIVE_SAVE_AS = True
