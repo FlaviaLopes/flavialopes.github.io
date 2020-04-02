@@ -1,8 +1,8 @@
 #!/bin/bash
 
-cd pelican
+pelican pelican/content -s pelican.conf.py
+#rm -fR deploy/*
+cp -R output/* deploy/
 make publish
+./publish.sh
 cd ..
-
-rm -fR deploy/*
-cp -R pelican/output/* deploy/

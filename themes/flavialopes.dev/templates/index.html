@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+
+{% block container %}
+    <section class="header">
+        {% include '_includes/header.html' %}
+    </section>
+
+    <section class="home-section">
+        <style>
+            .post-outer {
+                padding: 0 0 20px 0;
+            }
+
+            .post-home-wrap, .archive .post-home-wrap {
+                padding: 0 10px 10px;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            .date_holder {
+                float: left;
+                background: #0088ff;
+                color: #fff;
+                padding: 4px 12px 12px;
+                margin-right: 6px;
+                position: relative;
+                text-align: center;
+            }
+
+            .date_holder:after {
+                content: "";
+                position: absolute;
+                bottom: 0px;
+                left: 0;
+                width: 1px;
+                height: 1px;
+                border: 24px solid transparent;
+                border-bottom: 8px solid #fff;
+                z-index: 0;
+            }
+
+            .date_holder .month {
+                display: block;
+                text-transform: uppercase;
+                font-size: 13px;
+                font-weight: 700;
+            }
+
+            .date_holder .day {
+                display: block;
+                font-size: 20px;
+                margin-bottom: 2px;
+                font-weight: 700;
+            }
+
+            h1.post-title {
+                font-size: 17px;
+            }
+
+            .retitle h2 {
+                display: block;
+            }
+
+            @media screen and (max-width: 680px) {
+                .block-image {
+                    float: none;
+                    margin: 0 auto 8px;
+                    clear: both;
+                    width: 100%;
+                }
+
+                article {
+                    padding: 0;
+                }
+            }
+
+            .block-image {
+                float: left;
+                width: 220px;
+                height: auto;
+                margin-right: 20px;
+                position: relative;
+            }
+
+            .block-image .thumb {
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: block;
+                overflow: hidden;
+            }
+
+            .block-image img {
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: cover;
+                transition: all .3s ease-out !important;
+                -webkit-transition: all .3s ease-out !important;
+                -moz-transition: all .3s ease-out !important;
+                -o-transition: all .3s ease-out !important;
+            }
+
+            .block-image .thumb:before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                opacity: 0;
+                left: 0;
+                top: 0;
+                z-index: 9;
+                -webkit-transition: all 0.35s ease-in-out;
+                -moz-transition: all 0.35s ease-in-out;
+                -ms-transition: all 0.35s ease-in-out;
+                -o-transition: all 0.35s ease-in-out;
+                transition: all 0.35s ease-in-out;
+            }
+
+            .block-image:hover .thumb:before {
+                opacity: 0.3;
+            }
+        </style>
+        {% for article in articles[0:DEFAULT_PAGINATION] %}
+        <div class="post-outer">
+            <div class="post hentry">
+                <div class="post-home-wrap">
+                    <div class="home-post-head">
+
+                        <div class="date_holder">
+                            <span class="day">{{ article.date.day }}</span><span
+                                class="month">{{ article.date.month }}</span>
+                            <span class="year">{{ article.date.year }}</span>
+                        </div>
+
+                        <div class="home-post-head-wrap">
+                            <font class="retitle">
+                                <h2 class="post-title entry-title">
+                                    <a href="{{ SITEURL }}/{{ article.url }}">
+                                        {{ article.title }}
+                                    </a>
+                                </h2>
+                            </font>
+
+                            <div id="meta-post">
+                                <span class="auth-meta">
+                                    <i class="fa fa-user-circle-o"></i>
+                                    <a class="g-profile" href="#" rel="author" title="{{ article.author }}">
+                                        <span itemprop="name">{{ article.author }}</span></a>
+                                </span>
+                                <span class="post-labels">
+                                    <i aria-hidden="true" class="fa fa-folder-open"></i>
+                                    <a href="#" rel="tag nofollow">CSS3 Tutorials</a>
+                                    <b>,</b>
+                                    <a href="#" rel="tag nofollow">Graphic Works</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block-image">
+                    <a class="thumb"
+                       href="{{ SITEURL }}/{{ article.url }}">
+                        <img alt="{{ article.title }}"
+                             src="{% if article.thumb %} {{SITEURL}}/{{ article.thumb }} {% else %} {{ SITEURL }}/{{HEADER}} {%endif%}"
+                        >
+                    </a>
+                </div>
+                <div class="post-header">
+                </div>
+
+                <article>
+                    <div class="date-header-post">
+                        <div class="resumo">
+                            <span>
+                                <div>
+                                    <div class="snippets">
+                                        {{ article.summary }}
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <div style="clear: both;"></div>
+                        <div class="second-meta">
+                                                <span class="read-more-wrap">
+                                                    <a class="read-more anchor-hover" href="#">Read more »</a></span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+
+    <br/><br/><br/>
+    <section class="home-section">
+        <div class="row">
+            <div class="post-outer">
+                <h2 class="blogpost-title">Projetos</h2>
+                <div class="home-post">
+                    {% for title,url in LINKS %}
+                    <a href="{{ url }}" target="_blank">{{ title }}</a>&nbsp; &nbsp;
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block footer %}
+{% include '_includes/footer.html' %}
+{% endblock %}

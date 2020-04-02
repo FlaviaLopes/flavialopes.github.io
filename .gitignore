@@ -3,5 +3,5 @@ deploy
 pelican-plugins
 pelican-themes
 *.pid
-pelican/output
+pelican/content
 *.pyc
