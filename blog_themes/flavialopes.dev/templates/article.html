@@ -79,12 +79,9 @@
                              </span>-->
                         </div>
                         <div class="share-box">
-                        <span class="post-labels">
-                        <span class="label-title">Tags</span>
-                            {%for tag in article.tags%}
-                                <a href="{{SITEURL}}/{{tag.url}}" rel="tag nofollow"># {{tag.name}}</a>
-                            {%endfor%}
-                        </span>
+                        {% if article.readtime %}
+                            <div><b>Tempo de leitura: {{article.readtime.minutes}} minutos.</b></div>
+                        {% endif %}
                         </div>
                     </div>
                     <article>
@@ -118,14 +115,14 @@
                     {%endif%}
 
                     <div class="share-box">
-                        <!--<span class="post-labels">
+                        <span class="post-labels">
                         <span class="label-title">Tags</span>
                             {%for tag in article.tags%}
                                 <a href="{{SITEURL}}/{{tag.url}}" rel="tag nofollow"># {{tag.name}}</a>
                             {%endfor%}
-                        </span>-->
+                        </span>
                         <!--TODO [RESOLVIDO] descobrir e consertar: por que os ícones não aparecem.
-                            RESOLVIDO: coloquei o font-family em cada classe em icons.css-->
+                            coloquei o font-family em cada classe em icons.css-->
                         <div class="share-art">
                             <a class="fac-art"
                                href="https://www.facebook.com/sharer.php?u={{SITEURL}}/{{article.url}}&amp;title={{article.title}}"
@@ -247,12 +244,7 @@
                         </div>
                     </div>
                     <div class="post-footer-line post-footer-line-2">
-                        <span class="post-labels">
-                            <span class="label-title">Tags</span>
-                            {%for tag in article.tags%}
-                                <a href="{{SITEURL}}/{{tag.url}}" rel="tag nofollow"># {{tag.name}}</a>
-                            {%endfor%}
-                        </span>
+
                     </div>
                     <div class="post-footer-line post-footer-line-3">
                         <span class="post-location"></span>
