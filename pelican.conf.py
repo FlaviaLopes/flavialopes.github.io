@@ -32,10 +32,15 @@ STATIC_PATHS = [
 PLUGIN_PATHS = ["../blog_source/pelican-plugins"]
 
 # plugin author_images gera a imagem ou avatar pra cada autor.
-PLUGINS = ['author_images', 'readtime']
+PLUGINS = ['author_images', 'readtime', 'related_posts']
 
+#author_images plugin
 AUTHOR_AVATARS = 'images/author_avatars'
 AUTHOR_IMAGES = 'images/author_images'
+
+#related_posts plugin
+RELATED_POSTS_MAX = 4
+RELATED_POSTS_SKIP_SAME_CATEGORY = False
 
 # path-specific metadata
 #EXTRA_PATH_METADATA = {

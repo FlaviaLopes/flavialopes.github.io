@@ -548,7 +548,7 @@ article {
     font-size: 20px;
 }
 
-.Related-title {
+.related-title {
     color: #151515;
     background: #f2f2f2;
     border: 1px solid rgba(0, 0, 0, 0.12);
@@ -767,6 +767,10 @@ h1.post-title {
 
 .post-footer .share-art .wat-art:hover {
     background: rgba(37, 210, 102, 0.73)
+}
+
+.post-footer-line.post-footer-line-1 {
+    clear: both;
 }
 
 /* ######## Comments Css ######################### */
@@ -1077,24 +1081,8 @@ h4#comment-post-message {
     -o-transition: all .3s ease-out !important;
 }
 
-.related-title a {
-    font-size: 12px;
-    line-height: 1.4em;
-    padding: 10px 0 0;
-    font-family: inherit;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: 1px;
-    color: #010101;
-    display: block;
-}
-
 .related li:nth-of-type(4n) {
     padding-right: 0;
-}
-
-.related .related-tag {
-    display: none;
 }
 
 .related-overlay {
@@ -1117,13 +1105,35 @@ h4#comment-post-message {
     z-index: 2;
 }
 
-.related .related-content .recent-date {
-    display: none;
+.related-title a {
+    font-size: 15px;
+    line-height: 1.4em;
+    padding: 10px 0 0;
+    font-family: inherit;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
+    color: #010101;
+    display: block;
+}
+
+.related .related-content .related-title span {
+    /*display: none;
+    padding: 3px 8px;*/
+    font-size: 12px;
+    background-color: #f8f8f8;
+    color: #b90504;
 }
 
 .recent-date:before, .p-date:before {
-    content: '\f017';
-    font-family: fontawesome;
+    content: "\e91b";
+    font-family: icomoon;
+    margin-right: 5px;
+}
+
+.related-tag:before{
+    content: "\f08d";
+    font-family: icomoon;
     margin-right: 5px;
 }
 

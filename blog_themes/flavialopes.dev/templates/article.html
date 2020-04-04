@@ -79,9 +79,9 @@
                              </span>-->
                         </div>
                         <div class="share-box">
-                        {% if article.readtime %}
+                            {% if article.readtime %}
                             <div><b>Tempo de leitura: {{article.readtime.minutes}} minutos.</b></div>
-                        {% endif %}
+                            {% endif %}
                         </div>
                     </div>
                     <article>
@@ -109,8 +109,8 @@
                     {%if article.download%}
                     <!--TODO criar classe para seção de downloads do artigo -->
                     <div class="share-box">
-                       <!-- <a class="btn btn-lg btn-default" target="_blank" href="{{SITEURL}}/{{article.download}}">DOWNLOAD
-                            CV</a>-->
+                        <!-- <a class="btn btn-lg btn-default" target="_blank" href="{{SITEURL}}/{{article.download}}">DOWNLOAD
+                             CV</a>-->
                     </div>
                     {%endif%}
 
@@ -187,35 +187,36 @@
                     </div>
 
                     <div style="clear:both"></div>
-                    <h8 class="Related-title"><span>You May Also Like:</span></h8>
+                    {% if article.related_posts %}
+
+                    <h8 class="Related-title"><span>Você pode se interessar por:</span></h8>
                     <div id="related-posts">
                         <div class="related">
-                            <!--TODO pegar n posts das categorias do post atual
-                            De acordo com as categorias do post atual:
-                                - pegar as urls dos posts dessas categorias
-                                - escolher os n mais recentes, mais populares, ou mais lidos
-                                - mostrar abaixo em um for
-                            -->
-                            {% for i in [0,1,2,3] %}
+                            {% for related_post in article.related_posts[0:4] %}
                             <li>
-                                <span class="related-tag">CSS3 Tutorials</span>
                                 <div class="related-thumb">
-                                    <a class="related-img" href="#"
-                                       style="background:url('{{SITEURL}}/{{article.thumb}}') no-repeat center center;background-size: cover">
+                                    <a class="related-img" href="{{ SITEURL }}/{{ related_post.url }}"
+                                       style="background:url('{{SITEURL}}/{{related_post.thumb}}') no-repeat center center;background-size: cover">
                                         <span class="related-overlay"></span>
                                     </a>
                                 </div>
                                 <div class="related-content">
                                     <h3 class="related-title">
-                                        <a href="#">Pub'l is an APP that Allows Easy Reading and Tuts</a>
-                                        <span class="recent-date">Apr 19, 2014</span>
+                                        <a href="{{ SITEURL }}/{{ related_post.url }}">
+                                            {{ related_post.title }}
+                                        </a>
+                                        <span class="related-tag">{{ related_post.category }}</span><br>
+                                        <span class="recent-date">{{ related_post.date }}</span>
                                     </h3>
+
                                 </div>
                             </li>
                             {% endfor %}
                         </div>
                         <div class="clear"></div>
                     </div>
+                    {% endif %}
+
                     <div class="post-footer-line post-footer-line-1">
                         <span class="post-author vcard">
                             By
@@ -252,7 +253,6 @@
                 </div>
             </div>
         </div>
-
 
 
         <!-- TODO - Sitema de comentários: 1 - Implementar o sistema de comentários: instalar o disqus plugin
