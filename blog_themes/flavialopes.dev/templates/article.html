@@ -121,43 +121,32 @@
                                 <a href="{{SITEURL}}/{{tag.url}}" rel="tag nofollow"># {{tag.name}}</a>
                             {%endfor%}
                         </span>
-                        <!--TODO [RESOLVIDO] descobrir e consertar: por que os ícones não aparecem.
-                            coloquei o font-family em cada classe em icons.css-->
                         <div class="share-art">
-                            <a class="fac-art"
-                               href="https://www.facebook.com/sharer.php?u={{SITEURL}}/{{article.url}}&amp;title={{article.title}}"
-                               onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
-                               rel="nofollow" target="_blank"><i class="site-icon-facebook"></i>
-                            </a>
-                            <a class="twi-art"
-                               href="http://twitter.com/share?url={{SITEURL}}/{{article.url}}&amp;title={{article.title}}"
-                               onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
-                               rel="nofollow" target="_blank"><i class="site-icon-twitter"></i>
-                            </a>
-                            <a class="goo-art"
-                               href="https://plus.google.com/share?url={{SITEURL}}/{{article.url}}&amp;title={{article.title}}"
-                               onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
-                               rel="nofollow" target="_blank"><i class="site-icon-google-plus"></i></a>
-                            <a class="pin-art"
-                               href="https://pinterest.com/pin/create/button/?url={{SITEURL}}/{{article.url}}&amp;title={{article.title}}&amp;media={{SITEURL}}/{{article.thumb}}&amp;description={{article.summary}}"
-                               onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
-                               rel="nofollow" target="_blank"><i class="site-icon-pinterest"></i></a>
-                            <a class="lin-art"
-                               href="https://www.linkedin.com/shareArticle?url={{SITEURL}}/{{article.url}}&amp;title={{article.title}}"
-                               onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
-                               rel="nofollow" target="_blank"><i class="site-icon-linkedin"></i></a>
+                            {% if article.share_post and article.status != 'draft' %}
+                            <section>
+                                <p id="post-share-links">
+                                    <a class="twi-art" href="{{article.share_post['twitter']}}" target="_blank"
+                                       title="Share on Twitter"><i class="site-icon-twitter"></i> Twitter</a>
 
-                            <!--TODO inplementar esta funcionalidade: compartilhar o post pelo whatsapp-->
-                            <!--<whatsapp ref="{{SITEURL}}/{{article.url}}" text="{{article.summary}}">
+                                    <a class="fac-art" href="{{article.share_post['facebook']}}" target="_blank"
+                                       title="Share on Facebook"><i class="site-icon-facebook"></i> Facebook</a>
 
-                            </whatsapp>
-                            <a class="wat-art"
-                               href="whatsapp://send?text={{article.title}} &gt;&gt; {{SITEURL}}/{{article.url}}"
-                               rel="nofollow" target="_blank"><i class="fa fa-whatsapp"></i>
-                            </a>-->
+                                    <a class="lin-art" href="{{article.share_post['linkedin']}}" target="_blank"
+                                       title="Share on LinkedIn"><i class="site-icon-linkedin"></i> LinkedIn</a>
 
-                            <a class="print-art" onclick="window.print()" rel="nofollow"
-                               style="cursor:pointer"><i class="site-icon-files"></i></a>
+                                    <a class="goo-art" href="{{article.share_post['email']}}" target="_blank"
+                                       title="Share via Email">
+                                        <i class="site-icon-recom"></i> E-mail</a>
+
+                                    <a class="wat-art" href="{{article.share_post['whatsapp']}}" target="_blank"
+                                       title="Share via Whatsapp">
+                                        <i class="site-icon-whatsapp"></i> Whatsapp</a>
+
+                                    <a class="print-art" onclick="window.print()" rel="nofollow"
+                                       style="cursor:pointer"><i class="site-icon-files"></i> Imprimir</a>
+                                </p>
+                            </section>
+                            {% endif %}
                         </div>
                     </div>
                     <div style="clear:both"></div>

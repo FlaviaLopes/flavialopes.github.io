@@ -705,7 +705,7 @@ h1.post-title {
 .post-footer .share-art a {
     color: #fff;
     padding: 3px 8px;
-    margin-left: 4px;
+    margin: 4px;
     border-radius: 2px;
     display: inline-block;
     margin-right: 0;
@@ -714,6 +714,7 @@ h1.post-title {
 
 .post-footer .share-art i {
     color: #fff;
+    margin-right: 3px;
 }
 
 .post-footer .share-art a:hover {
@@ -762,7 +763,6 @@ h1.post-title {
 
 .post-footer .share-art .wat-art {
     background: #25d266;
-    display: none;
 }
 
 .post-footer .share-art .wat-art:hover {
