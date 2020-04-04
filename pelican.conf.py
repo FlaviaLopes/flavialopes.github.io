@@ -28,6 +28,14 @@ STATIC_PATHS = [
     'notebooks',
     'pdfs']
 
+
+PLUGIN_PATHS = ["../blog_source/pelican-plugins"]
+
+# plugin author_images gera a imagem ou avatar pra cada autor.
+PLUGINS = ['author_images']
+AUTHOR_AVATARS = 'images/author_avatars'
+AUTHOR_IMAGES = 'images/author_images'
+
 # path-specific metadata
 #EXTRA_PATH_METADATA = {
 #    'extra/robots.txt': {'path': 'robots.txt'},
