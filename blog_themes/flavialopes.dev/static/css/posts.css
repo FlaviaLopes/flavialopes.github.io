@@ -1,4 +1,37 @@
+/* TODO
+ implementar funcionalidade: copiar código para área de transferência
+ - os códigos aparecem na estrutura:
+ <div class="highlight">
+    <pre><span></span>
+        <code>
+            <span class="nb">print</span>
+            <span class="p">(</span><span class="s2">"The triple-colon syntax will *not* show line numbers."</span>
+            <span class="p">)</span>
+        </code>
+    </pre>
+ </div>
+ */
+
 /* ######## Post Css ######################### */
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal
+}
+
+.site-icon {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
 article {
     padding: 0 10px 0 0;
     overflow: hidden;
@@ -185,7 +218,7 @@ article {
 }
 
 .post-header {
-    padding: 0 10px 10px;
+    padding: 20px 10px 10px;
 }
 
 .index .post-header, .archive .post-header {
@@ -491,7 +524,7 @@ article {
 
 .sora-author-box {
     overflow: hidden;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .sora-author-box img {
@@ -501,10 +534,12 @@ article {
 }
 
 .sora-author-box p {
-    padding: 0 10px 10px;
+    padding: 20px 10px 10px;
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
+    float: left;
 }
+
 
 .sora-author-box b {
     font-weight: 700;
@@ -674,8 +709,8 @@ h4#comment-post-message {
 
 .comments h4:after {
     display: inline-block;
-    content: "\f075";
-    font-family: fontAwesome;
+    content: "\f0e5";
+    font-family: icomoon;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -709,6 +744,9 @@ h4#comment-post-message {
     overflow: hidden;
     padding: 0;
     border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
 }
 
 .comments .avatar-image-container img {

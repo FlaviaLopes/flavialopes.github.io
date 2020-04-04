@@ -3,16 +3,79 @@
 AUTHOR = 'Flávia Lopes'
 SITENAME = "Flávia Lopes .Dev"
 SITESUBTITLE = 'A personal blog.'
+SITEDESCRIPTION = ''
+BLOGKEYWORDS = ['Python','Developer', 'Data Science']
 SITEURL = ''
 TIMEZONE = "America/Sao_Paulo"
-DEFAULT_DATA = '%DD%MM%YYYY'
-LANGUAGE = 'pt'
+
+# Utiliza a data que estiver em metadata
+DEFAULT_DATE = 'fs'
+DEFAULT_LANG = 'pt-BR'
+
 # can be useful in development, but set to False when you're ready to publish
 RELATIVE_URLS = True
 
-THEME = 'themes/flavialopes.dev'
-HEADER = 'theme/images/avatar.jpg'
-SITEICON = 'theme/images/favicon.ico'
+THEME = 'blog_themes/flavialopes.dev'
+#THEME_STATIC_DIR = 'blog_themes/flavialopes.dev/static'
+OUTPUT = 'blog_content/output'
+PATH = 'blog_content/content'
+
+# to call a static file: ![Alt Text]({filename}/images/han.jpg)
+# static paths will be copied without parsing their contents
+STATIC_PATHS = [
+    #'extra/robots.txt',
+    'images',
+    'notebooks',
+    'pdfs']
+
+# path-specific metadata
+#EXTRA_PATH_METADATA = {
+#    'extra/robots.txt': {'path': 'robots.txt'},
+#    }
+
+ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{slug}/'
+ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{slug}/index.html'
+
+# Quando True as categorias são geradas conforme a organização das pastas
+USE_FOLDER_AS_CATEGORY = False
+SUMMARY_MAX_LENGTH = 40
+
+GITHUB_URL = 'http://github.com/FlaviaLopes/'
+REVERSE_CATEGORY_ORDER = True
+LOCALE = "C"
+DEFAULT_PAGINATION = 10
+
+DISPLAY_PAGES_ON_MENU = True
+COMMENT = True
+JIATHIS = True
+
+PROJECTS = (('Genetic Algorithm with Python', 'https://www.github.com/FlaviaLopes/Genetic-Algorithm'),
+         ('Acelera Dev Data Science', "https://www.github.com/FlaviaLopes/AceleraDev-Codenation-Data-Science"),
+         ('Eleições 2018', "https://www.github.com/FlaviaLopes/Eleicoes-2018"),)
+
+SOCIAL = (('twitter', 'https://twitter.com/_flavialopes_'),
+          ('linkedin', 'https://linkedin.com/in/lopesflavia'),
+          ('github', 'https://github.com/FlaviaLopes'),
+          ('instagram', 'https://instagram.com/lopesflavia'),
+          ('facebook', 'https://facebook.com/flavialopesads'),)
+
+# global metadata to all the contents
+DEFAULT_METADATA = {
+    'status': 'draft',
+    'favicon': 'images/favicon.ico',
+    'avatarblog': 'images/avatar.jpg'
+}
+# code blocks with line numbers
+PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
+
+#FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
+#DOWNLOAD_METADATA = '(?P<>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
+
+#If you want to exclude any pages from being linked to or listed
+# in the menu then add a status: hidden attribute to its metadata.
+
+#HEADER = 'blog_themes/flavialopes.dev/static/images/author_avatars/avatar.jpg'
+#SITEICON = 'theme/images/favicon.ico'
 #MONTH_ARCHIVE_SAVE_AS = True
 #YEAR_ARCHIVE_SAVE_AS = True
 
@@ -29,46 +92,14 @@ SITEICON = 'theme/images/favicon.ico'
 # TRANSLATION_FEED_ATOM
 # TRANSLATION_FEED_RSS
 
-GITHUB_URL = 'http://github.com/FlaviaLopes/'
-#DISQUS_SITENAME = "blog-notmyidea"
-REVERSE_CATEGORY_ORDER = True
-LOCALE = "C"
-DEFAULT_PAGINATION = 10
 
 #FEED_ALL_RSS = 'feeds/all.rss.xml'
 #CATEGORY_FEED_RSS = 'feeds/{slug}.rss.xml'
-BLOGKEYWORDS = ['Python','Developer', 'Data Science']
-
-COMMENT = True
-JIATHIS = True
-
-LINKS = (('Genetic Algorithm with Python', 'https://www.github.com/FlaviaLopes/Genetic-Algorithm'),
-         ('Acelera Dev Data Science', "https://www.github.com/FlaviaLopes/AceleraDev-Codenation-Data-Science"),
-         ('Eleições 2018', "https://www.github.com/FlaviaLopes/Eleicoes-2018"),)
-
-SOCIAL = (('twitter', 'https://twitter.com/_flavialopes_'),
-          ('linkedin', 'https://linkedin.com/in/lopesflavia'),
-          ('github', 'https://github.com/FlaviaLopes'),)
-
-# global metadata to all the contents
-DEFAULT_METADATA = {'yeah': 'it is'}
-
-# path-specific metadata
-#EXTRA_PATH_METADATA = {
-#    'extra/robots.txt': {'path': 'robots.txt'},
-#    }
-
-# static paths will be copied without parsing their contents
-#STATIC_PATHS = [
-#    'pictures',
-#    'extra/robots.txt',
-#    ]
 
 # custom page generated with a jinja2 template
 #TEMPLATE_PAGES = {'pages/jinja2_template.html': 'jinja2_template.html'}
 
-# code blocks with line numbers
-PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
+
 
 # foobar will not be used, because it's not in caps. All configuration keys
 # have to be in caps

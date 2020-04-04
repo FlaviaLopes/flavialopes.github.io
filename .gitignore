@@ -3,5 +3,6 @@ deploy
 pelican-plugins
 pelican-themes
 *.pid
-pelican/content
+blog_content/content
+output
 *.pyc
