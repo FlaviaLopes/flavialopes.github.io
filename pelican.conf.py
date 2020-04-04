@@ -32,7 +32,7 @@ STATIC_PATHS = [
 PLUGIN_PATHS = ["../blog_source/pelican-plugins"]
 
 # plugin author_images gera a imagem ou avatar pra cada autor.
-PLUGINS = ['author_images', 'readtime', 'related_posts', 'share_post']
+PLUGINS = ['author_images', 'readtime', 'related_posts', 'share_post', 'thumbnailer']
 
 #author_images plugin
 AUTHOR_AVATARS = 'images/author_avatars'
@@ -41,6 +41,19 @@ AUTHOR_IMAGES = 'images/author_images'
 #related_posts plugin
 RELATED_POSTS_MAX = 4
 RELATED_POSTS_SKIP_SAME_CATEGORY = False
+
+#thumbnailer plugin
+IMAGE_PATH = 'images'
+THUMBNAIL_DIR = 'images'
+THUMBNAIL_KEEP_NAME = True
+# wxh - will resize to exactly wxh
+# wx? - will resize so that the width is the specified size, and the height will scale to retain aspect ratio
+# ?xh - same as wx? but will height being a set size
+# s is a shorthand for wxh where w=h
+THUMBNAIL_SIZES = {
+    'thumbnail_cover': '?x100',
+    'thumbnail_post': '?x250'
+}
 
 # path-specific metadata
 #EXTRA_PATH_METADATA = {
