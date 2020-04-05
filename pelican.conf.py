@@ -30,9 +30,10 @@ STATIC_PATHS = [
 
 
 PLUGIN_PATHS = ["../blog_source/pelican-plugins"]
+PLUGIN_PATHS = ["../blog_source/_plugins"]
 
 # plugin author_images gera a imagem ou avatar pra cada autor.
-PLUGINS = ['author_images', 'readtime', 'related_posts', 'share_post', 'thumbnailer']
+PLUGINS = ['author_images', 'readtime', 'related_posts', 'share_post', 'thumbnailer', 'autopages']
 
 #author_images plugin
 AUTHOR_AVATARS = 'images/author_avatars'
@@ -55,6 +56,10 @@ THUMBNAIL_SIZES = {
     'thumbnail_post': '?x250'
 }
 
+#autopages plugin
+AUTHOR_PAGE_PATH = 'pages/authors'
+CATEGORY_PAGE_PATH = 'pages/categories'
+TAG_PAGE_PATH = 'pages/tags'
 # path-specific metadata
 #EXTRA_PATH_METADATA = {
 #    'extra/robots.txt': {'path': 'robots.txt'},
