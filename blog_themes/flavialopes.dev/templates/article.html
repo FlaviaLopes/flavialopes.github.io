@@ -12,34 +12,32 @@
                     <meta content="{% if article.thumb %} {{SITEURL}}/{{ article.thumb }} {% else %} {{ SITEURL }}/{{DEFAULT_METADATA.avatarblog}} {%endif%}"
                           itemprop="image">
                     <div class="post-header">
-                        <!--TODO Implementar o breadcrumbs-->
-
                         <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
                             <span typeof="v:Breadcrumb">
-                                <a class="bhome" href="{{SITEURL}}" property="v:title" rel="v:url">Home</a>
+                                <a class="bhome" href="{{ SITEURL }}" property="v:title" rel="v:url">
+                                    Home
+                                </a>
+                                <a class="bhome site-icon-caret-right" href="{{ SITEURL }}/{{ article.url }}"
+                                   property="v:title" rel="v:url">
+                                    {{article.title}}
+                                </a>
                             </span>
-                            <brc>/</brc>
                             <span typeof="v:Breadcrumb">
-                                <a href="#" property="v:title" rel="v:url">CSS3 Tutorials</a>
+                                <a class="bhome site-icon-caret-right" href="{{ SITEURL }}/{{ article.category.url }}"
+                                   property="v:title" rel="v:url">
+                                        {{ article.category }}
+                                </a>
+                                <brc>/</brc>
                             </span>
-                            <brc>/</brc>
+                            {% for sub in article.subcategories %}
                             <span typeof="v:Breadcrumb">
-                                <a href="#" property="v:title" rel="v:url">Graphic Works</a>
-                            </span>
-                            <brc>/</brc>
-                            <span typeof="v:Breadcrumb">
-                                <a href="#" property="v:title" rel="v:url">HTML5 Design</a>
-                            </span>
-                            <brc>/</brc>
-                            <span typeof="v:Breadcrumb">
-                                <a href="#" property="v:title" rel="v:url">News</a>
-                            </span>
-                            <brc>/</brc>
-                            <span typeof="v:Breadcrumb">
-                                <a href="#" property="v:title" rel="v:url">Video Tuts</a>
-                            </span>
-                            <brc>/</brc>
-                            <span>Pub'l is an APP that Allows Easy Reading and Tuts</span>
+                                    <a class="bhome site-icon-caret-right" href="{{ SITEURL }}/{{ sub.url }}"
+                                       property="v:title" rel="v:url">
+                                        {{ sub.shortname }}</a>
+                                    <brc>/</brc>
+                                </span>
+                            {% endfor %}
+                            <span class="site-icon-caret-right">{{article.title}}</span>
                         </div>
 
                         <div class="post-head" style="padding-top: 20px;">
@@ -79,12 +77,9 @@
                              </span>-->
                         </div>
                         <div class="share-box">
-                        <span class="post-labels">
-                        <span class="label-title">Tags</span>
-                            {%for tag in article.tags%}
-                                <a href="{{SITEURL}}/{{tag.url}}" rel="tag nofollow"># {{tag.name}}</a>
-                            {%endfor%}
-                        </span>
+                            {% if article.readtime %}
+                            <div><b>Tempo de leitura: {{article.readtime.minutes}} minutos.</b></div>
+                            {% endif %}
                         </div>
                     </div>
                     <article>
@@ -112,55 +107,44 @@
                     {%if article.download%}
                     <!--TODO criar classe para seção de downloads do artigo -->
                     <div class="share-box">
-                       <!-- <a class="btn btn-lg btn-default" target="_blank" href="{{SITEURL}}/{{article.download}}">DOWNLOAD
-                            CV</a>-->
+                        <!-- <a class="btn btn-lg btn-default" target="_blank" href="{{SITEURL}}/{{article.download}}">DOWNLOAD
+                             CV</a>-->
                     </div>
                     {%endif%}
 
                     <div class="share-box">
-                        <!--<span class="post-labels">
+                        <span class="post-labels">
                         <span class="label-title">Tags</span>
                             {%for tag in article.tags%}
                                 <a href="{{SITEURL}}/{{tag.url}}" rel="tag nofollow"># {{tag.name}}</a>
                             {%endfor%}
-                        </span>-->
-                        <!--TODO [RESOLVIDO] descobrir e consertar: por que os ícones não aparecem.
-                            RESOLVIDO: coloquei o font-family em cada classe em icons.css-->
+                        </span>
                         <div class="share-art">
-                            <a class="fac-art"
-                               href="https://www.facebook.com/sharer.php?u={{SITEURL}}/{{article.url}}&amp;title={{article.title}}"
-                               onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
-                               rel="nofollow" target="_blank"><i class="site-icon-facebook"></i>
-                            </a>
-                            <a class="twi-art"
-                               href="http://twitter.com/share?url={{SITEURL}}/{{article.url}}&amp;title={{article.title}}"
-                               onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
-                               rel="nofollow" target="_blank"><i class="site-icon-twitter"></i>
-                            </a>
-                            <a class="goo-art"
-                               href="https://plus.google.com/share?url={{SITEURL}}/{{article.url}}&amp;title={{article.title}}"
-                               onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
-                               rel="nofollow" target="_blank"><i class="site-icon-google-plus"></i></a>
-                            <a class="pin-art"
-                               href="https://pinterest.com/pin/create/button/?url={{SITEURL}}/{{article.url}}&amp;title={{article.title}}&amp;media={{SITEURL}}/{{article.thumb}}&amp;description={{article.summary}}"
-                               onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
-                               rel="nofollow" target="_blank"><i class="site-icon-pinterest"></i></a>
-                            <a class="lin-art"
-                               href="https://www.linkedin.com/shareArticle?url={{SITEURL}}/{{article.url}}&amp;title={{article.title}}"
-                               onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
-                               rel="nofollow" target="_blank"><i class="site-icon-linkedin"></i></a>
+                            {% if article.share_post and article.status != 'draft' %}
+                            <section>
+                                <p id="post-share-links">
+                                    <a class="twi-art" href="{{article.share_post['twitter']}}" target="_blank"
+                                       title="Share on Twitter"><i class="site-icon-twitter"></i> Twitter</a>
 
-                            <!--TODO inplementar esta funcionalidade: compartilhar o post pelo whatsapp-->
-                            <!--<whatsapp ref="{{SITEURL}}/{{article.url}}" text="{{article.summary}}">
+                                    <a class="fac-art" href="{{article.share_post['facebook']}}" target="_blank"
+                                       title="Share on Facebook"><i class="site-icon-facebook"></i> Facebook</a>
 
-                            </whatsapp>
-                            <a class="wat-art"
-                               href="whatsapp://send?text={{article.title}} &gt;&gt; {{SITEURL}}/{{article.url}}"
-                               rel="nofollow" target="_blank"><i class="fa fa-whatsapp"></i>
-                            </a>-->
+                                    <a class="lin-art" href="{{article.share_post['linkedin']}}" target="_blank"
+                                       title="Share on LinkedIn"><i class="site-icon-linkedin"></i> LinkedIn</a>
 
-                            <a class="print-art" onclick="window.print()" rel="nofollow"
-                               style="cursor:pointer"><i class="site-icon-files"></i></a>
+                                    <a class="goo-art" href="{{article.share_post['email']}}" target="_blank"
+                                       title="Share via Email">
+                                        <i class="site-icon-recom"></i> E-mail</a>
+
+                                    <a class="wat-art" href="{{article.share_post['whatsapp']}}" target="_blank"
+                                       title="Share via Whatsapp">
+                                        <i class="site-icon-whatsapp"></i> Whatsapp</a>
+
+                                    <a class="print-art" onclick="window.print()" rel="nofollow"
+                                       style="cursor:pointer"><i class="site-icon-files"></i> Imprimir</a>
+                                </p>
+                            </section>
+                            {% endif %}
                         </div>
                     </div>
                     <div style="clear:both"></div>
@@ -190,35 +174,36 @@
                     </div>
 
                     <div style="clear:both"></div>
-                    <h8 class="Related-title"><span>You May Also Like:</span></h8>
+                    {% if article.related_posts %}
+
+                    <h8 class="Related-title"><span>Você pode se interessar por:</span></h8>
                     <div id="related-posts">
                         <div class="related">
-                            <!--TODO pegar n posts das categorias do post atual
-                            De acordo com as categorias do post atual:
-                                - pegar as urls dos posts dessas categorias
-                                - escolher os n mais recentes, mais populares, ou mais lidos
-                                - mostrar abaixo em um for
-                            -->
-                            {% for i in [0,1,2,3] %}
+                            {% for related_post in article.related_posts[0:4] %}
                             <li>
-                                <span class="related-tag">CSS3 Tutorials</span>
                                 <div class="related-thumb">
-                                    <a class="related-img" href="#"
-                                       style="background:url('{{SITEURL}}/{{article.thumb}}') no-repeat center center;background-size: cover">
+                                    <a class="related-img" href="{{ SITEURL }}/{{ related_post.url }}"
+                                       style="background:url('{{SITEURL}}/{{related_post.thumb}}') no-repeat center center;background-size: cover">
                                         <span class="related-overlay"></span>
                                     </a>
                                 </div>
                                 <div class="related-content">
                                     <h3 class="related-title">
-                                        <a href="#">Pub'l is an APP that Allows Easy Reading and Tuts</a>
-                                        <span class="recent-date">Apr 19, 2014</span>
+                                        <a href="{{ SITEURL }}/{{ related_post.url }}">
+                                            {{ related_post.title }}
+                                        </a>
+                                        <span class="related-tag">{{ related_post.category }}</span><br>
+                                        <span class="recent-date">{{ related_post.date }}</span>
                                     </h3>
+
                                 </div>
                             </li>
                             {% endfor %}
                         </div>
                         <div class="clear"></div>
                     </div>
+                    {% endif %}
+
                     <div class="post-footer-line post-footer-line-1">
                         <span class="post-author vcard">
                             By
@@ -247,12 +232,7 @@
                         </div>
                     </div>
                     <div class="post-footer-line post-footer-line-2">
-                        <span class="post-labels">
-                            <span class="label-title">Tags</span>
-                            {%for tag in article.tags%}
-                                <a href="{{SITEURL}}/{{tag.url}}" rel="tag nofollow"># {{tag.name}}</a>
-                            {%endfor%}
-                        </span>
+
                     </div>
                     <div class="post-footer-line post-footer-line-3">
                         <span class="post-location"></span>
@@ -260,7 +240,6 @@
                 </div>
             </div>
         </div>
-
 
 
         <!-- TODO - Sitema de comentários: 1 - Implementar o sistema de comentários: instalar o disqus plugin

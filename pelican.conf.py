@@ -28,6 +28,42 @@ STATIC_PATHS = [
     'notebooks',
     'pdfs']
 
+
+PLUGIN_PATHS = ["../blog_source/pelican-plugins"]
+PLUGIN_PATHS = ["../blog_source/_plugins"]
+
+# plugin author_images gera a imagem ou avatar pra cada autor.
+PLUGINS = ['author_images', 'readtime', 'related_posts', 'share_post', 'thumbnailer',
+           'autopages', 'better_figures_and_images', 'subcategory']
+
+#author_images plugin
+AUTHOR_AVATARS = 'images/author_avatars'
+AUTHOR_IMAGES = 'images/author_images'
+
+#related_posts plugin
+RELATED_POSTS_MAX = 4
+RELATED_POSTS_SKIP_SAME_CATEGORY = False
+
+#thumbnailer plugin
+IMAGE_PATH = 'images'
+THUMBNAIL_DIR = 'images'
+THUMBNAIL_KEEP_NAME = True
+# wxh - will resize to exactly wxh
+# wx? - will resize so that the width is the specified size, and the height will scale to retain aspect ratio
+# ?xh - same as wx? but will height being a set size
+# s is a shorthand for wxh where w=h
+THUMBNAIL_SIZES = {
+    'thumbnail_cover': '?x100',
+    'thumbnail_post': '?x250'
+}
+
+#autopages plugin
+AUTHOR_PAGE_PATH = 'pages/authors'
+CATEGORY_PAGE_PATH = 'pages/categories'
+TAG_PAGE_PATH = 'pages/tags'
+RESPONSIVE_IMAGES = True
+#subcategories plugin
+PATH_METADATA = 'posts/(?P<subcategory_path>.*)/.*'
 # path-specific metadata
 #EXTRA_PATH_METADATA = {
 #    'extra/robots.txt': {'path': 'robots.txt'},
@@ -37,7 +73,7 @@ ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{slug}/'
 ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{slug}/index.html'
 
 # Quando True as categorias são geradas conforme a organização das pastas
-USE_FOLDER_AS_CATEGORY = False
+USE_FOLDER_AS_CATEGORY = True
 SUMMARY_MAX_LENGTH = 40
 
 GITHUB_URL = 'http://github.com/FlaviaLopes/'
