@@ -9,27 +9,54 @@ SITEURL = ''
 TIMEZONE = "America/Sao_Paulo"
 
 # Utiliza a data que estiver em metadata
-DEFAULT_DATE = 'fs'
+#DEFAULT_DATE = 'fs'
+DEFAULT_DATE_FORMAT = '%a %d %B %Y'
+LOCALE = 'C'
 DEFAULT_LANG = 'pt-BR'
 
 # can be useful in development, but set to False when you're ready to publish
 RELATIVE_URLS = True
 
-THEME = 'blog_themes/flavialopes.dev'
-#THEME_STATIC_DIR = 'blog_themes/flavialopes.dev/static'
-OUTPUT = 'blog_content/output'
 PATH = 'blog_content/content'
-
-# to call a static file: ![Alt Text]({filename}/images/han.jpg)
-# static paths will be copied without parsing their contents
+ARTICLE_PATH = ['posts']
+PAGE_PATHS = ['pages']
+THEME = 'blog_themes/flavialopes.dev'
+OUTPUT_PATH = 'blog_content/output'
 STATIC_PATHS = [
     #'extra/robots.txt',
     'images',
     'notebooks',
-    'pdfs']
+    'pdfs',
+    'pages']
+
+DEFAULT_CATEGORY = 'python'
+
+ARTICLE_URL = 'posts/{date:%Y}/{date:%d}/{slug}.html'
+ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%d}/{slug}.html'
+ARTICLE_LANG_URL =  'posts/{date:%Y}/{date:%d}/{slug}-{lang}.html'
+ARTICLE_LANG_SAVE_AS = 'posts/{date:%Y}/{date:%d}/{slug}-{lang}.html'
+DRAFT_URL = 'drafts/{date:%Y}/{date:%d}/{slug}.html'
+DRAFT_SAVE_AS = 'drafts/{date:%Y}/{date:%d}/{slug}.html'
+DRAFT_LANG_URL = 'drafts/{date:%Y}/{date:%d}/{slug}-{lang}.html'
+DRAFT_LANG_SAVE_AS = 'drafts/{date:%Y}/{date:%d}/{slug}-{lang}.html'
+
+#verificar esta
+#STATIC_CREATE_LINKS = False
+#STATIC_CHECK_IF_MODIFIED = False
+DIRECT_TEMPLATES = ['index', 'tags', 'categories', 'authors', 'archives']
 
 
-PLUGIN_PATHS = ["../blog_source/pelican-plugins"]
+
+LOG_FILTER = []
+# code blocks with line numbers
+PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
+
+
+# to call a static file: ![Alt Text]({filename}/images/han.jpg)
+# static paths will be copied without parsing their contents
+
+
+
 PLUGIN_PATHS = ["../blog_source/_plugins"]
 
 # plugin author_images gera a imagem ou avatar pra cada autor.
@@ -61,16 +88,17 @@ THUMBNAIL_SIZES = {
 AUTHOR_PAGE_PATH = 'pages/authors'
 CATEGORY_PAGE_PATH = 'pages/categories'
 TAG_PAGE_PATH = 'pages/tags'
+
+#better_figures_and_images plugin
 RESPONSIVE_IMAGES = True
+
 #subcategories plugin
 PATH_METADATA = 'posts/(?P<subcategory_path>.*)/.*'
+
 # path-specific metadata
 #EXTRA_PATH_METADATA = {
 #    'extra/robots.txt': {'path': 'robots.txt'},
 #    }
-
-ARTICLE_URL = 'posts/{date:%Y}/{date:%m}/{slug}/'
-ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%m}/{slug}/index.html'
 
 # Quando True as categorias são geradas conforme a organização das pastas
 USE_FOLDER_AS_CATEGORY = True
@@ -78,7 +106,6 @@ SUMMARY_MAX_LENGTH = 40
 
 GITHUB_URL = 'http://github.com/FlaviaLopes/'
 REVERSE_CATEGORY_ORDER = True
-LOCALE = "C"
 DEFAULT_PAGINATION = 10
 
 DISPLAY_PAGES_ON_MENU = True
@@ -101,8 +128,10 @@ DEFAULT_METADATA = {
     'favicon': 'images/favicon.ico',
     'avatarblog': 'images/avatar.jpg'
 }
-# code blocks with line numbers
-PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
+
+FILENAME_METADATA = r'(?P<date>\d{2}-\d{2}-\d{4}).*'
+
+
 
 #FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
 #DOWNLOAD_METADATA = '(?P<>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
@@ -132,8 +161,6 @@ PYGMENTS_RST_OPTIONS = {'linenos': 'table'}
 #FEED_ALL_RSS = 'feeds/all.rss.xml'
 #CATEGORY_FEED_RSS = 'feeds/{slug}.rss.xml'
 
-# custom page generated with a jinja2 template
-#TEMPLATE_PAGES = {'pages/jinja2_template.html': 'jinja2_template.html'}
 
 
 

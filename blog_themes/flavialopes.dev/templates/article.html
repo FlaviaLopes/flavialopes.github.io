@@ -46,7 +46,7 @@
                             </h1>
                         </div>
                         <div class="post-meta">
-                            <span class="post-author vcard">
+                            <span class="post-author ">
                                 <i>by</i>
                                 <span class="fn" itemprop="author" itemscope="itemscope"
                                       itemtype="http://schema.org/Person">
@@ -94,7 +94,8 @@
                                         - guardar imagens neste tamanho
                                         -->
                                         <img border="0" width="250px" max-width="100%" height="auto"
-                                             src="{% if article.thumb %} {{SITEURL}}/{{ article.thumb }} {% else %} {{ SITEURL }}/{{DEFAULT_METADATA.avatarblog}} {%endif%}"></a>
+                                             src="{% if article.thumb %} {{SITEURL}}/{{ article.thumb }} {% else %} {{ SITEURL }}/{{DEFAULT_METADATA.avatarblog}} {%endif%}">
+                                    </a>
                                 </div>
                                 {{ article.content }}
                             </div>
@@ -148,20 +149,6 @@
                         </div>
                     </div>
                     <div style="clear:both"></div>
-                    <div class="sora-author-box">
-                        <img alt="Author Image" class="avatar avatar-60 photo" height="100"
-                             src="{{SITEURL}}/{{article.thumb}}"
-                             width="110">
-                        <p>
-                            <!--TODO criar página sobre e adicionar aqui-->
-                            <b>Sobre este Blog</b>
-                            <br>
-                            <span>Implementar isto.</span>
-                        </p>
-                    </div>
-
-                    <div style="clear:both"></div>
-
                     <!--TODO descobrir como pegar o link do artigo anterior (postado antes do atual)-->
                     <div class="post-pager" id="post-pager">
                         <span id="blog-pager-older-link">
@@ -205,7 +192,7 @@
                     {% endif %}
 
                     <div class="post-footer-line post-footer-line-1">
-                        <span class="post-author vcard">
+                        <span class="post-author ">
                             By
                             <span class="fn" itemprop="author" itemscope="itemscope"
                                   itemtype="http://schema.org/Person">
@@ -240,8 +227,6 @@
                 </div>
             </div>
         </div>
-
-
         <!-- TODO - Sitema de comentários: 1 - Implementar o sistema de comentários: instalar o disqus plugin
         <div class="comments" id="comments">
              <a name="comments"></a>
