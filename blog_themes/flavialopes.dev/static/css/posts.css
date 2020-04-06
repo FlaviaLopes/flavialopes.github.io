@@ -53,19 +53,12 @@ article {
     background: #fff;
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.12);
+    margin-bottom: 10px;
 }
 
 .post {
     -webkit-box-shadow: 3px 0 3px 0px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: 3px 0 3px 0px rgba(0, 0, 0, 0.05);
-    padding: 0;
-    border-bottom: 0;
-}
-
-.index .post-home-wrap, .archive .post-home-wrap {
-    padding: 0 10px 10px;
-    box-sizing: border-box;
-    overflow: hidden;
 }
 
 .home-post-head {
@@ -445,6 +438,7 @@ article {
     width: 100%;
     box-sizing: border-box;
     margin: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 #post-pager .blog-pager-older-link, #post-pager .blog-pager-newer-link {
@@ -1131,7 +1125,11 @@ h4#comment-post-message {
     margin-right: 5px;
 }
 
-.related-tag:before{
+.related .related-content .related-title .related-tag {
+    font-size: 10px;
+}
+
+.related-tag:before {
     content: "\f08d";
     font-family: icomoon;
     margin-right: 5px;

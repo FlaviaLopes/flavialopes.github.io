@@ -179,8 +179,11 @@
                                         <a href="{{ SITEURL }}/{{ related_post.url }}">
                                             {{ related_post.title }}
                                         </a>
-                                        <span class="related-tag">{{ related_post.category }}</span><br>
-                                        <span class="recent-date">{{ related_post.date }}</span>
+                                        {%for category in related_post.categories or [related_post.category] %}
+                                            <span class="related-tag">{{ related_post.category }}</span><br>
+                                            {{ '<b>,</b> ' if not loop.last }}
+                                        {%endfor%}
+                                        <span class="recent-date">{{ related_post.date | strftime('%d %B %Y') }}</span>
                                     </h3>
 
                                 </div>
