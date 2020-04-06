@@ -961,6 +961,7 @@
 .site-icon-caret-right:before {
     content: "\f0da";
     font-family: icomoon;
+    margin-right: 4px;
 }
 
 .site-icon-linkedin:before {

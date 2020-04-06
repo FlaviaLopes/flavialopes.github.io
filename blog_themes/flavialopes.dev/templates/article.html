@@ -12,34 +12,32 @@
                     <meta content="{% if article.thumb %} {{SITEURL}}/{{ article.thumb }} {% else %} {{ SITEURL }}/{{DEFAULT_METADATA.avatarblog}} {%endif%}"
                           itemprop="image">
                     <div class="post-header">
-                        <!--TODO Implementar o breadcrumbs-->
-
                         <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
                             <span typeof="v:Breadcrumb">
-                                <a class="bhome" href="{{SITEURL}}" property="v:title" rel="v:url">Home</a>
+                                <a class="bhome" href="{{ SITEURL }}" property="v:title" rel="v:url">
+                                    Home
+                                </a>
+                                <a class="bhome site-icon-caret-right" href="{{ SITEURL }}/{{ article.url }}"
+                                   property="v:title" rel="v:url">
+                                    {{article.title}}
+                                </a>
                             </span>
-                            <brc>/</brc>
                             <span typeof="v:Breadcrumb">
-                                <a href="#" property="v:title" rel="v:url">CSS3 Tutorials</a>
+                                <a class="bhome site-icon-caret-right" href="{{ SITEURL }}/{{ article.category.url }}"
+                                   property="v:title" rel="v:url">
+                                        {{ article.category }}
+                                </a>
+                                <brc>/</brc>
                             </span>
-                            <brc>/</brc>
+                            {% for sub in article.subcategories %}
                             <span typeof="v:Breadcrumb">
-                                <a href="#" property="v:title" rel="v:url">Graphic Works</a>
-                            </span>
-                            <brc>/</brc>
-                            <span typeof="v:Breadcrumb">
-                                <a href="#" property="v:title" rel="v:url">HTML5 Design</a>
-                            </span>
-                            <brc>/</brc>
-                            <span typeof="v:Breadcrumb">
-                                <a href="#" property="v:title" rel="v:url">News</a>
-                            </span>
-                            <brc>/</brc>
-                            <span typeof="v:Breadcrumb">
-                                <a href="#" property="v:title" rel="v:url">Video Tuts</a>
-                            </span>
-                            <brc>/</brc>
-                            <span>Pub'l is an APP that Allows Easy Reading and Tuts</span>
+                                    <a class="bhome site-icon-caret-right" href="{{ SITEURL }}/{{ sub.url }}"
+                                       property="v:title" rel="v:url">
+                                        {{ sub.shortname }}</a>
+                                    <brc>/</brc>
+                                </span>
+                            {% endfor %}
+                            <span class="site-icon-caret-right">{{article.title}}</span>
                         </div>
 
                         <div class="post-head" style="padding-top: 20px;">
