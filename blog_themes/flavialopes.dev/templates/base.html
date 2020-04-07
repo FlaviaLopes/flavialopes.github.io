@@ -50,7 +50,7 @@
                     HOME
                 </a>
             </li>
-            {% for page in pages|sort %}
+            {% for page in pages %}
                 <li class="navbar-item">
                     <a class="navbar-link" href="{{ SITEURL }}/{{ page.url }}">
                         {{ page.title }}
@@ -71,29 +71,5 @@
 {% block footer %}
 {% endblock %}
 
-<script>
-{% if BAIDUID %}
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?{{ BAIDUID }}";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-    })();
-{% endif %}
-{% if DUOSHUONAME %}
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-var duoshuoQuery = {short_name:"{{ DUOSHUONAME }}"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-<!-- 多说公共JS代码 end -->
-{% endif %}
-</script>
 </body>
 </html>
