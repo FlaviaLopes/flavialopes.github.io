@@ -1,23 +1,24 @@
 {% extends 'base.html' %}
 
 {% block container %}
-    <section class="header">
-        {% include '_includes/header.html' %}
-    </section>
-    <div class="clearfix"></div>
-    <section class="home-section">
-        {% for article in articles[0:DEFAULT_PAGINATION] %}
-        <div class="post-outer">
-            <div class="post hentry">
-                <div class="post-home-wrap">
-                    <div class="home-post-head">
+<section class="header">
+    {% include '_includes/header.html' %}
+</section>
+<div class="clearfix"></div>
+<section class="home-section">
+    {% for article in articles[0:DEFAULT_PAGINATION] %}
+    <div class="post-outer">
+        <div class="post hentry">
+            <div class="post-home-wrap">
+                <div class="home-post-head">
 
-                        <div class="date_holder">
-                            <span class="day">{{ article.date.day }}</span><span
-                                class="month">{{ article.date.month }}</span>
-                            <span class="year">{{ article.date.year }}</span>
-                        </div>
+                    <div class="date_holder">
+                        <span class="month">{{ article.date|strftime('%d') }}</span>
+                        <span class="month">{{ article.date|strftime('%m') }}</span>
+                        <span class="month">{{ article.date|strftime('%Y') }}</span>
+                    </div>
 
+                    <div class="home-post-head-wrap">
                         <div class="home-post-head-wrap">
                             <font class="retitle">
                                 <h2 class="post-title entry-title">
@@ -29,16 +30,23 @@
 
                             <div id="meta-post">
                                 <span class="auth-meta">
-                                    <i class="fa fa-user-circle-o"></i>
+                                    <i class="site-icon-user-card"></i>
                                     <a class="g-profile" href="#" rel="author" title="{{ article.author }}">
                                         <span itemprop="name">{{ article.author }}</span></a>
                                 </span>
                                 <span class="post-labels">
-                                    <i aria-hidden="true" class="fa fa-folder-open"></i>
-                                    <a href="#" rel="tag nofollow">CSS3 Tutorials</a>
-                                    <b>,</b>
-                                    <a href="#" rel="tag nofollow">Graphic Works</a>
-                                </span>
+                                    <i aria-hidden="true" class="site-icon-folder-open"></i>
+                                    <a href="{{ SITEURL }}/{{ article.category.url }}" rel="tag nofollow">{{article.category}}</a>
+                                {% for sub in article.subcategories[0:3] %}
+                                    <i aria-hidden="true" class="site-icon-folder-open"></i>
+                                    <a href="{{ SITEURL }}/{{ sub.url }}" rel="tag nofollow">{{sub.shortname}}</a>{{ ', ' if not loop.last }}
+                                {% endfor %}
+                                {% for tag in article.tags[0:3] %}
+                                    <i aria-hidden="true" class="site-icon-pin"></i>
+                                    <a href="{{ SITEURL }}/{{ tag.url }}"
+                                       rel="tag nofollow">{{tag}}</a>
+                                {%endfor%}
+                            </span>
                             </div>
                         </div>
                     </div>
@@ -68,7 +76,8 @@
                         <div style="clear: both;"></div>
                         <div class="second-meta">
                                                 <span class="read-more-wrap">
-                                                    <a class="read-more anchor-hover" href="#">Read more »</a></span>
+                                                    <a class="read-more anchor-hover"
+                                                       href="{{ SITEURL }}/{{ article.url }}">Leia mais »</a></span>
                         </div>
                     </div>
                 </article>
@@ -76,21 +85,21 @@
             </div>
         </div>
         {% endfor %}
-    </section>
+</section>
 
-    <br/><br/><br/>
-    <section class="home-section">
-        <div class="row">
-            <div class="post-outer">
-                <h2 class="blogpost-title">Projetos</h2>
-                <div class="home-post">
-                    {% for title,url in PROJECTS %}
-                    <a href="{{ url }}" target="_blank">{{ title }}</a>&nbsp; &nbsp;
-                    {% endfor %}
-                </div>
+<br/><br/><br/>
+<section class="home-section">
+    <div class="row">
+        <div class="post-outer">
+            <h2 class="blogpost-title">Projetos</h2>
+            <div class="home-post">
+                {% for title,url in PROJECTS %}
+                <a href="{{ url }}" target="_blank">{{ title }}</a>&nbsp; &nbsp;
+                {% endfor %}
             </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}
 
 
