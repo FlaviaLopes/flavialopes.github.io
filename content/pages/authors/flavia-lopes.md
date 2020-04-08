@@ -3,32 +3,14 @@ Slug: flavia-lopes
 Author: Flávia Lopes
 Status: published
 Thumb: images/avatar.jpg
-Summary: Lorem ipsum dolor si amet. Lorem ipsum dolor si amet.  Lorem ipsum dolor si amet. Lorem ipsum dolor si amet.Lorem ipsum dolor si amet. Lorem ipsum dolor si amet. Lorem ipsum dolor si amet. Lorem ipsum dolor si amet. Lorem ipsum dolor si amet. Lorem ipsum dolor si amet. Lorem ipsum dolor si amet. Lorem ipsum dolor si amet.
+Summary: Eu sou a Flávia. Estou numa jornada de imersão, e resolvi criar este blog pra registrar as minhas experiências.
  
-# This is a Hello World!
+# Seja bem vindo ao meu site 'Frankstein'.
 
-## Welcome to my Pelican Blog.
+Este é um site estático gerado pelo Pelican cujo tema é uma mistura do 'ops' e trechos de css de html que estavam juntando poeira por aí.
 
-Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.
+Mas quero me apresentar, eu sou a Flávia. Estou numa jornada de imersão, e resolvi criar este blog pra registrar as minhas experiências. Alguém disse, 'Se você não consegue explicar algo de maneira detalhada e simples você não entendeu direito'. Eu vou escrever de uma forma que até minha avó consiga entender. Porque aí saberei que de fato entendi o que estudei.
 
-Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.
+E se alguém conseguir aproveitar este conteúdo ficarei muito feliz porque siginificá que estou fazendo coisas úteis. 
 
-
-### Lorem ipsum dolor sit amet, a mark here adipisicing elit.
-
-* Lorem
-* Adipisicing elit
-* Atque iusto
-
-Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.
-
-Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.
-
-Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.
-
-### Lorem ipsum dolor sit amet, a mark here adipisicing elit.
-
-1. Lorem
-2. Adipisicing elit
-3. Atque iustodolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.
 
