@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }} - {{ period | reverse | join(' ') }} archives{% endblock %}
+
+{% block container %}
+<h1>Archives for {{ period | reverse | join(' ') }}</h1>
+
+<dl>
+    {% for article in dates %}
+    <dt>{{ article.locale_date }}</dt>
+    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+    {% endfor %}
+</dl>
+{% endblock %}
+{% block footer %}
+{% include '_includes/footer.html' %}
+{% endblock %}
