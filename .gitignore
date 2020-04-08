@@ -5,3 +5,4 @@ pelican-themes
 *.pid
 output
 *.pyc
+.idea
