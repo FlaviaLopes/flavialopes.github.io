@@ -1,3 +1,4 @@
 pelican
-Markdown
+Markdown 
 punch.py
+typogrify
