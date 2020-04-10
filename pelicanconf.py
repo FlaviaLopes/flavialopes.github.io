@@ -56,7 +56,7 @@ MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
 
 # Quando True as categorias são geradas conforme a organização das pastas
 USE_FOLDER_AS_CATEGORY = True
-SUMMARY_MAX_LENGTH = 40
+SUMMARY_MAX_LENGTH = 35
 
 GITHUB_URL = 'http://github.com/FlaviaLopes/'
 GOOGLE_ANALYTICS = ''

@@ -2,3 +2,6 @@ pelican
 Markdown 
 punch.py
 typogrify
+invoke
+ghp-import
+livereload
