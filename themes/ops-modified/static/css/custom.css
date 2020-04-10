@@ -1,5 +1,5 @@
 .blogpost-title {
-    color: #b90504;
+    color: #0d0def;
     font-family: 'Homemade Apple', cursive;
 }
 
@@ -13,12 +13,12 @@
     color: white;
     border-radius: 3px;
     padding: 0.5%;
-    font-size: 12px;
+    font-size: 12pt;
     text-align: left;
 }
 
 .article-date {
-    font-size: 14px;
+    font-size: 14pt;
     text-align: right;
     font-style: italic;
     margin: 4% 1% 0 0;
@@ -64,12 +64,12 @@ footer {
 }
 
 .blogpost-date {
-    font-size: 14px;
+    font-size: 14pt;
     font-style: italic;
 }
 
 .summary-date {
-    font-size: 14px;
+    font-size: 14pt;
 }
 
 .screenshot-wrapper {
@@ -94,13 +94,14 @@ a {
 }
 
 .title {
-    color: #b90504;
+    color: #0d0def;
     font-family: 'Homemade Apple', cursive;
-    font-size: 48px;
+    font-size: 40pt;
 }
 
 .subtitle {
     color: grey;
+    font-size: 30pt;
 }
 
 .circular {
@@ -172,7 +173,7 @@ a {
     background: #EEE;
     text-align: center;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 1em;
     text-transform: uppercase;
     height: 30px;
     line-height: 30px;
@@ -197,13 +198,13 @@ a {
 }
 
 .heading-font-size {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     color: #999;
     letter-spacing: normal;
 }
 
 .code-example {
-    margin-top: 1.5rem;
+    margin-top: 1.5em;
     margin-bottom: 0;
 }
 
@@ -323,7 +324,7 @@ a {
 
     .navbar-link {
         text-transform: uppercase;
-        font-size: 11px;
+        font-size: 13pt;
         font-weight: 600;
         letter-spacing: .2rem;
         margin-right: 35px;
@@ -333,7 +334,7 @@ a {
     }
 
     .navbar-link.active {
-        color: #b90504;
+        color: #0d0def;
     }
 
     .has-docked-nav .navbar {
@@ -416,7 +417,7 @@ a {
         border-bottom: 1px solid #eee;
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 1.0rem;
+        font-size: 1.0em;
         font-weight: 600;
         text-align: center;
         letter-spacing: .1rem;
@@ -433,11 +434,11 @@ a {
 
     .popover-link:hover {
         color: #fff;
-        background: #b90504;
+        background: #0d0def;
     }
 
     .popover-link:hover,
     .popover-item:first-child .popover-link:hover:after {
-        border-bottom-color: #b90504;
+        border-bottom-color: #0d0def;
     }
 }

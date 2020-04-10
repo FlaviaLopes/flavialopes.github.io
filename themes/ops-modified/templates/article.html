@@ -8,7 +8,7 @@
     <div class="post-outer">
         <div class="post hentry">
             <div class="post-home-wrap">
-                <div itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+                <div id="post-content" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
                     <meta content="{% if article.thumb %} {{SITEURL}}/{{ article.thumb }} {% else %} {{ SITEURL }}/{{DEFAULT_METADATA.avatarblog}} {%endif%}"
                           itemprop="image">
                     <div class="post-header">
@@ -117,24 +117,24 @@
                             <section>
                                 <p id="post-share-links">
                                     <a class="twi-art" href="{{article.share_post['twitter']}}" target="_blank"
-                                       title="Share on Twitter"><i class="site-icon-twitter"></i> Twitter</a>
+                                       title="Share on Twitter"><i class="site-icon-twitter"></i> </a>
 
                                     <a class="fac-art" href="{{article.share_post['facebook']}}" target="_blank"
-                                       title="Share on Facebook"><i class="site-icon-facebook"></i> Facebook</a>
+                                       title="Share on Facebook"><i class="site-icon-facebook"></i> </a>
 
                                     <a class="lin-art" href="{{article.share_post['linkedin']}}" target="_blank"
-                                       title="Share on LinkedIn"><i class="site-icon-linkedin"></i> LinkedIn</a>
+                                       title="Share on LinkedIn"><i class="site-icon-linkedin"></i> </a>
 
                                     <a class="goo-art" href="{{article.share_post['email']}}" target="_blank"
                                        title="Share via Email">
-                                        <i class="site-icon-recom"></i> E-mail</a>
+                                        <i class="site-icon-paperclip"></i> </a>
 
                                     <a class="wat-art" href="{{article.share_post['whatsapp']}}" target="_blank"
                                        title="Share via Whatsapp">
-                                        <i class="site-icon-whatsapp"></i> Whatsapp</a>
+                                        <i class="site-icon-whatsapp"></i> </a>
 
                                     <a class="print-art" onclick="window.print()" rel="nofollow"
-                                       style="cursor:pointer"><i class="site-icon-files"></i> Imprimir</a>
+                                       style="cursor:pointer" title="Imprimir"><i class="site-icon-files"></i> </a>
                                 </p>
                             </section>
                             {% endif %}

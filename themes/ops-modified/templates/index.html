@@ -6,6 +6,7 @@
 </section>
 <div class="clearfix"></div>
 <section class="home-section">
+    {%if articles%}
     {% for article in articles[0:DEFAULT_PAGINATION] %}
     <div class="post-outer">
         <div class="post hentry">
@@ -31,7 +32,8 @@
                             <div id="meta-post">
                                 <span class="auth-meta">
                                     <i class="site-icon-user-card"></i>
-                                    <a class="g-profile" href="{{SITEURL}}/{{article.author.url}}" rel="author" title="{{ article.author }}">
+                                    <a class="g-profile" href="{{SITEURL}}/{{article.author.url}}" rel="author"
+                                       title="{{ article.author }}">
                                         <span itemprop="name">{{ article.author }}</span></a>
                                 </span>
                                 <span class="post-labels">
@@ -85,6 +87,10 @@
             </div>
         </div>
         {% endfor %}
+    </div>
+    {%else%}
+    <h3 class="blogpost-title">Em breve haverá artigos! ;)</h3>
+    {%endif%}
 </section>
 
 <br/><br/><br/>
