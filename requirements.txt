@@ -1,3 +1,7 @@
 pelican
-Markdown
+Markdown 
 punch.py
+typogrify
+invoke
+ghp-import
+livereload
