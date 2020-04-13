@@ -47,7 +47,6 @@ article {
 
 .post {
     display: block;
-    overflow: hidden;
     word-wrap: break-word;
     padding: 0 10px 10px;
     background: #fff;
@@ -579,7 +578,6 @@ article {
 .post-home-wrap {
     padding: 0 10px 10px;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .date_holder {
@@ -662,6 +660,9 @@ div#post-content h6, section#content h6, h6 {
 
     article {
         padding: 0;
+    }
+    .post, .post-home-wrap{
+        overflow: hidden;
     }
 }
 
