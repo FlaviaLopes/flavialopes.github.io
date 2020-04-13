@@ -47,7 +47,6 @@ article {
 
 .post {
     display: block;
-    overflow: hidden;
     word-wrap: break-word;
     padding: 0 10px 10px;
     background: #fff;
@@ -579,7 +578,6 @@ article {
 .post-home-wrap {
     padding: 0 10px 10px;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .date_holder {
@@ -662,6 +660,9 @@ div#post-content h6, section#content h6, h6 {
 
     article {
         padding: 0;
+    }
+    .post, .post-home-wrap{
+        overflow: hidden;
     }
 }
 
@@ -1060,7 +1061,7 @@ h4#comment-post-message {
 }
 
 .related li {
-    width: 25%;
+    width: 33%;
     display: inline-block;
     height: auto;
     min-height: 184px;
@@ -1077,13 +1078,13 @@ h4#comment-post-message {
 
 .related-thumb {
     width: 100%;
-    height: 100px;
+    height: 150px;
     overflow: hidden;
 }
 
 .related li .related-img {
     width: 100%;
-    height: 100px;
+    height: 150px;
     display: block;
     position: relative;
     transition: all .3s ease-out !important;
@@ -1127,7 +1128,7 @@ h4#comment-post-message {
 }
 
 .related-title a {
-    font-size: 15pt;
+    font-size: 10pt;
     line-height: 1.4em;
     padding: 10px 0 0;
     font-family: inherit;
@@ -1141,7 +1142,7 @@ h4#comment-post-message {
 .related .related-content .related-title span {
     /*display: none;
     padding: 3px 8px;*/
-    font-size: 12pt;
+    font-size: 10pt;
     background-color: #f8f8f8;
     color: #0d0def;
 }

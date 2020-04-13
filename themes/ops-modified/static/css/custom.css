@@ -247,6 +247,14 @@ a {
     display: none;
 }
 
+/*estilos para listagem dl em archives*/
+dl dd{
+    margin-bottom: 20px;
+    font-size: 12pt;
+}
+
+/**/
+
 /* Larger than phone */
 @media (min-width: 550px) {
     .header {
