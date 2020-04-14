@@ -34,7 +34,6 @@
 
 article {
     padding: 0 10px 0 0;
-    overflow: hidden;
 }
 
 .item article, .static_page article {
@@ -425,7 +424,8 @@ article {
     text-decoration: none
 }
 
-#post-pager .blog-pager-older-link:hover, #post-pager .blog-pager-newer-link:hover {
+#post-pager .blog-pager-older-link:hover, #post-pager .blog-pager-newer-link:hover,
+.post-pager-subpart .blog-pager-older-link:hover, .post-pager-subpart .blog-pager-newer-link:hover {
     color: #0088ff;
     background: inherit;
 }
@@ -440,23 +440,33 @@ article {
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-#post-pager .blog-pager-older-link, #post-pager .blog-pager-newer-link {
+.post-pager-subpart {
+    clear: both;
+    float: left;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 15px 0;
+}
+
+#post-pager .blog-pager-older-link, #post-pager .blog-pager-newer-link,
+.post-pager-subpart .blog-pager-older-link, .post-pager-subpart .blog-pager-newer-link {
     border: 0;
-    text-align: right;
     background: none;
     color: #222222;
 }
 
-#post-pager .blog-pager-newer-link {
+#post-pager .blog-pager-newer-link, .post-pager-subpart .blog-pager-newer-link {
     border: 0;
     text-align: left;
 }
 
-#post-pager #blog-pager-newer-link, #post-pager #blog-pager-older-link {
+#post-pager #blog-pager-newer-link, #post-pager #blog-pager-older-link,
+.post-pager-subpart #blog-pager-newer-link, .post-pager-subpart #blog-pager-older-link {
     width: 50%;
 }
 
-#post-pager a b {
+#post-pager a b, .post-pager-subpart a b {
     display: block;
     padding: 0 0 5px;
     font-weight: 700;
@@ -467,12 +477,17 @@ article {
     text-transform: uppercase;
 }
 
-#post-pager a span {
+.post-pager-subpart span {
+    margin-bottom: 5px;
+}
+
+#post-pager a span, .post-pager-subpart a span {
     text-transform: capitalize;
     font-style: italic;
 }
 
-#post-pager .blog-pager-older-link, #post-pager .blog-pager-newer-link {
+#post-pager .blog-pager-older-link, #post-pager .blog-pager-newer-link,
+.post-pager-subpart .blog-pager-older-link, .post-pager-subpart .blog-pager-newer-link {
     padding: 0;
     display: block;
 }
@@ -661,7 +676,8 @@ div#post-content h6, section#content h6, h6 {
     article {
         padding: 0;
     }
-    .post, .post-home-wrap{
+
+    .post, .post-home-wrap {
         overflow: hidden;
     }
 }
@@ -1304,11 +1320,12 @@ h4#comment-post-message {
         padding-right: 0;
     }
 
-    #post-pager #blog-pager-newer-link {
+    #post-pager #blog-pager-newer-link, .post-pager-subpart #blog-pager-newer-link {
         margin: 0 auto 10px;
     }
 
-    #post-pager #blog-pager-older-link, #post-pager #blog-pager-newer-link {
+    #post-pager #blog-pager-older-link, #post-pager #blog-pager-newer-link,
+    .post-pager-subpart #blog-pager-older-link, .post-pager-subpart #blog-pager-newer-link {
         float: none;
         clear: both;
         margin: 0 auto;
