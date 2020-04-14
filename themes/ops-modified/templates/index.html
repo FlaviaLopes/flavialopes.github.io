@@ -43,11 +43,13 @@
                                     <i aria-hidden="true" class="site-icon-folder-open"></i>
                                     <a href="{{ SITEURL }}/{{ sub.url }}" rel="tag nofollow">{{sub.shortname}}</a>{{ ', ' if not loop.last }}
                                 {% endfor %}
-                                {% for tag in article.tags[0:3] %}
-                                    <i aria-hidden="true" class="site-icon-pin"></i>
-                                    <a href="{{ SITEURL }}/{{ tag.url }}"
-                                       rel="tag nofollow">{{tag}}</a>
-                                {%endfor%}
+                                {% if article.tags %}
+                                    {% for tag in article.tags[0:3] %}
+                                        <i aria-hidden="true" class="site-icon-pin"></i>
+                                        <a href="{{ SITEURL }}/{{ tag.url }}"
+                                           rel="tag nofollow">{{tag}}</a>
+                                    {% endfor %}
+                                {% endif %}
                             </span>
                             </div>
                         </div>

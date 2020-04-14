@@ -8,7 +8,8 @@
     <div class="post-outer">
         <div class="post hentry">
             <div class="post-home-wrap">
-                <div id="post-content" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+                <div id="post-content" itemprop="blogPost" itemscope="itemscope"
+                     itemtype="http://schema.org/BlogPosting">
                     <meta content="{% if article.thumb %} {{SITEURL}}/{{ article.thumb }} {% else %} {{ SITEURL }}/{{DEFAULT_METADATA.avatarblog}} {%endif%}"
                           itemprop="image">
                     <div class="post-header">
@@ -70,7 +71,7 @@
                         </div>
                         <div class="share-box">
                             {% if article.readtime %}
-                                <div><b>Tempo de leitura: {{article.readtime.minutes}} minutos.</b></div>
+                            <div><b>Tempo de leitura: {{article.readtime.minutes}} minutos.</b></div>
                             {% endif %}
                         </div>
                     </div>
@@ -96,22 +97,63 @@
                 </div>
 
                 <div class="post-footer">
-
+                    <!--TODO criar classe para seção de downloads do artigo
                     {%if article.download%}
-                    <!--TODO criar classe para seção de downloads do artigo -->
                     <div class="share-box">
-                        <!-- <a class="btn btn-lg btn-default" target="_blank" href="{{SITEURL}}/{{article.download}}">DOWNLOAD
-                             CV</a>-->
+                        <a class="btn btn-lg btn-default" target="_blank" href="{{SITEURL}}/{{article.download}}">
+                        DOWNLOAD </a>
                     </div>
                     {%endif%}
+                    -->
+                    {% if article.subparts %}
+                    <div class="post-pager-subpart">
+                        <span><i class="site-icon-chevron-right"></i> {{article.title}} </span>
+                        {% for part in article.subparts %}
+                            <span class="blog-pager-older-link">
+                                <i class="site-icon-chevron-right"></i>
+                                <a class="" href="{{ SITEURL }}/{{ part.url }}"
+                                   id="Blog1_blog-pager-older-link" title="{{part.title}}">
+                                    <span>{{ part.subtitle }}</span>
+                                </a>
+                            </span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    {% if article.subpart_of %}
+                    <div class="post-pager-subpart">
+                        <span class="blog-pager-older-link">
+                            <i class="site-icon-chevron-right"></i>
+                            <a class="" href="{{ SITEURL }}/{{ article.subpart_of.url }}"
+                                title="{{article.subpart_of.title}}">
+                                <span>{{ article.subpart_of.title }}</span>
+                            </a>
+                        </span>
+                        {% for part in article.subpart_of.subparts %}
+                            {% if part == article %}
+                                <span><i class="site-icon-chevron-right"></i><b> {{article.title}}</b> </span>
+                            {% else %}
+                                <span class="blog-pager-older-link">
+                                    <i class="site-icon-chevron-right"></i>
+                                    <a class="" href="{{ SITEURL }}/{{ part.url }}"
+                                        title="{{part.title}}">
+                                        <span>{{ part.title }}</span>
+                                    </a>
+                                </span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
 
                     <div class="share-box">
+                        {% if article.tags or article.tag %}
                         <span class="post-labels">
                         <span class="label-title">Tags</span>
                             {%for tag in article.tags%}
                                 <a href="{{SITEURL}}/{{tag.url}}" rel="tag nofollow"># {{tag.name}}</a>
                             {%endfor%}
                         </span>
+                        {% endif %}
                         <div class="share-art">
                             {% if article.share_post and article.status != 'draft' %}
                             <section>
@@ -141,18 +183,6 @@
                         </div>
                     </div>
                     <div style="clear:both"></div>
-                    <!--TODO descobrir como pegar o link do artigo anterior (postado antes do atual)
-                    funcionalidade para o futuro-->
-
-                    <!--<div class="post-pager" id="post-pager">
-                        <span id="blog-pager-older-link">
-                            <a class="blog-pager-older-link" href="#"
-                               id="Blog1_blog-pager-older-link" title="Older Post">
-                                <b>Older Article  <i class="site-icon-chevron-right" aria-hidden="true"></i></b>
-                                <span>Título do artigo</span>
-                            </a>
-                        </span>
-                    </div>-->
 
                     <div style="clear:both"></div>
                     {% if article.related_posts %}
@@ -173,9 +203,8 @@
                                         <a href="{{ SITEURL }}/{{ related_post.url }}">
                                             {{ related_post.title }}
                                         </a>
-                                        {%for category in related_post.categories or [related_post.category] %}
-                                            <span class="related-tag">{{ related_post.category }}</span><br>
-                                            {{ '<b>,</b> ' if not loop.last }}
+                                        {%for tag in related_post.tags or [related_post.tag] %}
+                                            <span class="related-tag">{{ tag }}</span><br>
                                         {%endfor%}
                                         <span class="recent-date">{{ related_post.date | strftime('%d %B %Y') }}</span>
                                     </h3>

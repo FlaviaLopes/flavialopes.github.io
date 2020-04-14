@@ -23,6 +23,7 @@ DATE_FORMATS = {
 'en': ('en_US','%a, %d %b %Y'),
 'pt': ('pt_BR','%a, %d %B %Y'),
 }
+DEFAULT_DATE = 'fs'
 THEME = 'themes/ops-modified'
 STATIC_PATHS = [
     #'extra/robots.txt',
@@ -110,7 +111,7 @@ PLUGIN_PATHS = ["_plugins"]
 
 # plugin author_images gera a imagem ou avatar pra cada autor.
 PLUGINS = ['author_images', 'readtime', 'related_posts', 'share_post', 'thumbnailer',
-           'autopages', 'better_figures_and_images', 'subcategory']
+           'autopages', 'better_figures_and_images', 'subcategory','sub_parts']
 
 #author_images plugin
 AUTHOR_AVATARS = 'images/author_avatars'
@@ -143,3 +144,7 @@ RESPONSIVE_IMAGES = True
 
 #subcategories plugin
 PATH_METADATA = 'posts/(?P<subcategory_path>.*)/.*'
+
+#sub_parts plugin
+FILENAME_METADATA = '(?P<slug>(?P<date>\d{4}-\d{2}-\d{2})-[^.]+)'
+
