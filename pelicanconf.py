@@ -13,6 +13,7 @@ BLOGKEYWORDS = ['python','python developer', 'web', 'pelican', 'github pages' 'd
 ### fim adicionado ###
 
 PATH = 'content'
+DEPLOY_PATH = 'deploy'
 
 ### adicionado ###
 DELETE_OUTPUT_DIRECTORY = True
