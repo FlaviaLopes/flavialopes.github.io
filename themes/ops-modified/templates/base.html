@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163781706-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-163781706-1');
+    </script>
+
     <meta charset="UTF-8">
     <title>{% block title %} {{ SITENAME }}{% endblock %}</title>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="wb:webmaster" content="ba29596b8c7c7ae7" /> 
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ba29596b8c7c7ae7" property="wb:webmaster"/>
 
-     <!-- Description and Keywords (start) -->
-    <meta name="description" content="{{ SITEDESCRIPTION }}">
-    <meta name="author" content="{{ AUTHOR }}">
+    <!-- Description and Keywords (start) -->
+    <meta content="{{ SITEDESCRIPTION }}" name="description">
+    <meta content="{{ AUTHOR }}" name="author">
     <meta content="{{ BLOGKEYWORDS }}" name="keywords">
     <!-- Description and Keywords (end) -->
     <meta content="Flavia Lopes .Dev" property="og:site_name">
@@ -25,7 +39,7 @@
     <meta content="@username" name="twitter:creator">
 
     <link href="{{SITEURL}}/{{DEFAULT_METADATA.favicon}}" rel="icon" type="image/x-icon">
-    <link href="{{ SITEURL }}/theme/css/fonts.css" rel="stylesheet" />
+    <link href="{{ SITEURL }}/theme/css/fonts.css" rel="stylesheet"/>
 
     <link href="{{ SITEURL }}/theme/css/normalize.css" rel="stylesheet"/>
     <link href="{{ SITEURL }}/theme/css/skeleton.css" rel="stylesheet"/>
@@ -51,15 +65,16 @@
                 </a>
             </li>
             {% for page in pages %}
-                <li class="navbar-item">
-                    <a class="navbar-link" href="{{ SITEURL }}/{{ page.url }}">
-                        {{ page.title }}
-                    </a>
-                </li>
+            <li class="navbar-item">
+                <a class="navbar-link" href="{{ SITEURL }}/{{ page.url }}">
+                    {{ page.title }}
+                </a>
+            </li>
             {% endfor %}
         </ul>
         <div class="navbar-link">
-            <a href="{{ SITEURL }}/index.html"><img src="{{ SITEURL }}/{{ DEFAULT_METADATA.favicon }}" class="site-icon"/></a>
+            <a href="{{ SITEURL }}/index.html"><img class="site-icon"
+                                                    src="{{ SITEURL }}/{{ DEFAULT_METADATA.favicon }}"/></a>
         </div>
     </div>
 </nav>
