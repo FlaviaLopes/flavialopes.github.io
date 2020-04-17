@@ -1,6 +1,8 @@
-now="$(date +'%d/%m/%Y')"
+now="$(date +'%d/%m/%Y %Hh %mm %Ss')"
 
 pelican -o deploy -s publishconf.py
+
+git checkout -b gh-pages --track destiny/master
 
 ghp-import deploy -b gh-pages -m "Publicado em $now"
 
