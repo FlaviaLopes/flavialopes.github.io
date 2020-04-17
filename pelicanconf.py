@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Flávia Lopes'
 SITENAME = 'Flávia Lopes .Dev'
-SITEURL = 'https://flavialopes.github.io'
+SITEURL = ''
+RELATIVE_URLS = True
 
 ### adicionado ###
 SITESUBTITLE = ''
