@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163781706-1"></script>
@@ -15,152 +15,87 @@
         gtag('config', 'UA-163781706-1');
     </script>
 
-    <meta charset="UTF-8">
-    <title> Como criar sua página e hospedá-la gratuitamente no Github Pages</title>
-
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ba29596b8c7c7ae7" property="wb:webmaster"/>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Bootstrap 4 Magazine/Blog Theme">
+    <meta name="author" content="Bootlab">
     <!-- Description and Keywords (start) -->
     <meta content="Blog Pessoal." name="description">
     <meta content="Flávia Lopes" name="author">
     <meta content="['python', 'python developer', 'web', 'pelican', 'github pagesdata science', 'github', 'portfolio']" name="keywords">
-    <!-- Description and Keywords (end) -->
-    <meta content="Flavia Lopes .Dev" property="og:site_name">
-    <meta content="https://flavialopes.dev" name="twitter:domain">
-    <meta content="" name="twitter:title">
-    <meta content="summary" name="twitter:card">
-    <!-- Social Media meta tag need customer customization -->
-    <meta content="Facebook App ID here" property="fb:app_id">
-    <meta content="Facebook Admin ID here" property="fb:admins">
-    <meta content="@username" name="twitter:site">
-    <meta content="@username" name="twitter:creator">
 
+    <meta content="Flávia Lopes .Dev" property="og:site_name">
     <link href="https://flavialopes.dev/images/favicon.ico" rel="icon" type="image/x-icon">
-    <link href="https://flavialopes.dev/theme/css/fonts.css" rel="stylesheet"/>
+    <title> Flávia Lopes .Dev</title>
+    <link rel="stylesheet" href="https://flavialopes.dev/theme/css/style.css">
+    <link rel="stylesheet" href="https://flavialopes.dev/theme/css/custom.css">
+    <link rel="stylesheet" href="https://flavialopes.dev/theme/css/icons.css">
 
-    <link href="https://flavialopes.dev/theme/css/normalize.css" rel="stylesheet"/>
-    <link href="https://flavialopes.dev/theme/css/skeleton.css" rel="stylesheet"/>
-    <link href="https://flavialopes.dev/theme/css/github-prettify-theme.css" rel="stylesheet"/>
-    <link href="https://flavialopes.dev/theme/css/custom.css" rel="stylesheet"/>
-    <link href="https://flavialopes.dev/theme/css/pygement.css" rel="stylesheet"/>
-    <link href="https://flavialopes.dev/theme/css/posts.css" rel="stylesheet"/>
-    <link href="https://flavialopes.dev/theme/css/icons.css" rel="stylesheet"/>
-
-    <script src="https://flavialopes.dev/theme/js/jquery.min.js"></script>
-    <script src="https://flavialopes.dev/theme/js/run_prettify.js"></script>
-    <script src="https://flavialopes.dev/theme/js/site.js"></script>
 </head>
-<body class="code-snippets-visible">
+<body>
 
-<div class="navbar-spacer"></div>
-<nav class="navbar">
+<header>
+    <nav class="navbar navbar-expand-md navbar-light bg-white absolute-top">
+        <div class="container">
+<button class="navbar-toggler order-2 order-md-1" type="button" data-toggle="collapse" data-target=".navbar-collapse"
+        aria-controls="navbar-left navbar-right" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse order-3 order-md-2" id="navbar-left">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="https://flavialopes.dev/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://flavialopes.dev/pages/flavia-lopes.html">Flávia L.</a>
+        </li>
+    </ul>
+</div>
+
+<div class="collapse navbar-collapse order-4 order-md-4" id="navbar-right">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <i aria-hidden="true" class="site-icon-search p-2"></i>
+        </li>
+    </ul>
+    <form class="form-inline" role="search">
+        <input class="search js-search form-control form-control-rounded mr-sm-2" type="text"
+               title="Enter search query here.." placeholder="Search.." aria-label="Search">
+    </form>
+</div>        </div>
+    </nav>
+</header>
+<main class="main pt-4">
     <div class="container">
-        <ul class="navbar-list">
-            <li class="navbar-item">
-                <a class="navbar-link" href="https://flavialopes.dev/index.html">
-                    HOME
-                </a>
-            </li>
-            <li class="navbar-item">
-                <a class="navbar-link" href="https://flavialopes.dev/pages/flavia-lopes.html">
-                    Flávia&nbsp;Lopes
-                </a>
-            </li>
-        </ul>
-        <div class="navbar-link">
-            <a href="https://flavialopes.dev/index.html"><img class="site-icon"
-                                                    src="https://flavialopes.dev/images/favicon.ico"/></a>
-        </div>
-    </div>
-</nav>
-<div class="container">
-
-<div class="date-posts">
-    <div class="post-outer">
-        <div class="post hentry">
-            <div class="post-home-wrap">
-                <div id="post-content" itemprop="blogPost" itemscope="itemscope"
-                     itemtype="http://schema.org/BlogPosting">
-                    <meta content=" https://flavialopes.dev/images/thumbnails/thumbnail_post/lua.jpeg"
-                          itemprop="image">
-                    <div class="post-header">
-                        <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
-                            <span typeof="v:Breadcrumb">
-                                <a class="bhome" href="https://flavialopes.dev" property="v:title" rel="v:url">
-                                    Home
-                                </a>
-                                <a class="bhome site-icon-caret-right" href="https://flavialopes.dev/drafts/2020/jan/como-criar-sua-pagina-e-hospeda-la-gratuitamente-no-github-pages/"
-                                   property="v:title" rel="v:url">
-                                    Como criar sua página e hospedá-la gratuitamente no Github&nbsp;Pages
-                                </a>
-                            </span>
-                            <span typeof="v:Breadcrumb">
-                                <a class="bhome site-icon-caret-right" href="https://flavialopes.dev/category/python.html"
-                                   property="v:title" rel="v:url">
-                                        python
-                                </a>
-                                <brc>/</brc>
-                            </span>
-                            <span typeof="v:Breadcrumb">
-                                    <a class="bhome site-icon-caret-right" href="https://flavialopes.dev/"
-                                       property="v:title" rel="v:url">
-                                        </a>
-                                    <brc>/</brc>
-                                </span>
-                            <span class="site-icon-caret-right">Como criar sua página e hospedá-la gratuitamente no Github&nbsp;Pages</span>
+        <div class="row">
+            <div class="col-md-9">
+                <article class="card mb-4">
+                    <header class="card-header text-center">
+                        <div class="card-meta">
+                            <a href="https://flavialopes.dev/drafts/2020/jan">
+                                <time class="timeago" datetime="04/01/2020">
+                                    04
+                                    de jan, 2020
+                                </time>
+                            </a> em <strong><a
+                                href="https://flavialopes.dev/category/python.html">Python</a></strong>
+                                <i aria-hidden="true" class="site-icon-folder-open"></i>
+                                <a href="https://flavialopes.dev/" rel="tag nofollow"></a>
+                                
                         </div>
-
-                        <div class="post-head" style="padding-top: 20px;">
-                            <h1 class="post-title entry-title" itemprop="name headline">
-                                Como criar sua página e hospedá-la gratuitamente no Github&nbsp;Pages
-                            </h1>
-                        </div>
-                        <div class="post-meta">
-                            <span class="post-author ">
-                                <i>by</i>
-                                <span class="fn" itemprop="author" itemscope="itemscope"
-                                      itemtype="http://schema.org/Person">
-                                    <meta content="https://flavialopes.dev/" itemprop="url">
-                                    <a class="g-profile"
-                                       href="https://flavialopes.dev/author/flavia-lopes.html" rel="author"
-                                       title="Flávia Lopes">
-                                        <span itemprop="name">Flávia Lopes</span>
-                                    </a>
-                                </span>
-                            </span>
-                            <span class="post-timestamp">
-                                <i>on</i>
-                                <meta content="" itemprop="url">
-                                <a class="timestamp-link" href="#" rel="bookmark" title="permanent link">
-                                    <abbr class="published timeago" itemprop="datePublished" title="2020-01-04 21:53:00-03:00">
-                                        04 janeiro 2020
-                                    </abbr>
-                                </a>
-                            </span>
-                        </div>
-                        <div class="share-box">
-                            <div><b>Tempo de leitura: 2 minutos.</b></div>
-                        </div>
-                    </div>
-                    <article>
-                        <div class="post-body entry-content" id="post-body-2343630507570872169"
-                             itemprop="articleBody">
-                            <meta content="" name="twitter:description">
-                            <div dir="ltr" style="text-align: left;" trbidi="on">
-                                <div class="separator" style="clear: both; text-align: center;">
-                                    <a href="#" imageanchor="1" style="">
-                                        <!--TODO ajustar o tamanho da imagem de cada post
-                                        - escolher tamanho ideal
-                                        - guardar imagens neste tamanho
-                                        -->
-                                        <img border="0" width="250px" max-width="100%" height="auto"
-                                             src=" https://flavialopes.dev/images/thumbnails/thumbnail_post/lua.jpeg">
-                                    </a>
-                                </div>
-                                <h1>O que é o Github Pages</h1>
+                        <a href="https://flavialopes.dev/drafts/2020/jan/como-criar-sua-pagina-e-hospeda-la-gratuitamente-no-github-pages/">
+                            <h1 class="card-title">Como criar sua página e hospedá-la gratuitamente no Github&nbsp;Pages</h1>
+                        </a>
+                    </header>
+                    <a href="https://flavialopes.dev/drafts/2020/jan/como-criar-sua-pagina-e-hospeda-la-gratuitamente-no-github-pages/">
+                        <img class="card-img"
+                             src=" https://flavialopes.dev/images/thumbnails/thumbnail_post/lua.jpeg"
+                             alt=""/>
+                    </a>
+                    <div class="card-body">
+                        <h1>O que é o Github Pages</h1>
 <p>To display line numbers, use a path-less shebang instead of colons:</p>
 <p>Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.</p>
 <p>Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.Lorem ipsum dolor sit amet, a mark here adipisicing elit. Atque, iusto, minus sequi natus nesciunt rerum tenetur corrupti autem officiis fug.</p>
@@ -179,466 +114,91 @@
 <li>Adipisicing elit</li>
 <li>Atque iusto</li>
 </ol>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="post-footer">
-                    <!--TODO criar classe para seção de downloads do artigo
-                    -->
-
-
-                    <div class="share-box">
-                        <span class="post-labels">
-                        <span class="label-title">Tags</span>
-                                <a href="https://flavialopes.dev/tag/github-pages.html" rel="tag nofollow"># github pages</a>
-                                <a href="https://flavialopes.dev/tag/static-content.html" rel="tag nofollow"># static content</a>
-                        </span>
-                        <div class="share-art">
-                        </div>
                     </div>
-                    <div style="clear:both"></div>
-
-                    <div style="clear:both"></div>
-
-                    <div class="post-footer-line post-footer-line-1">
-                        <span class="post-author ">
-                            By
-                            <span class="fn" itemprop="author" itemscope="itemscope"
-                                  itemtype="http://schema.org/Person">
-                                <meta content="https://flavialopes.dev/author/flavia-lopes.html" itemprop="url">
-                                <a class="g-profile" href="https://flavialopes.dev/author/flavia-lopes.html" rel="author"
-                                   title="author profile">
-                                    <span itemprop="name">Flávia Lopes</span>
-                                </a>
-                            </span>
-                        </span>
-                        <span class="post-timestamp">
-                        at
-                        <meta content="https://flavialopes.dev/drafts/2020/jan/como-criar-sua-pagina-e-hospeda-la-gratuitamente-no-github-pages/" itemprop="url">
-                            <a class="timestamp-link" href="https://flavialopes.dev/author/flavia-lopes.html" rel="bookmark"
-                               title="permanent link">
-                                <abbr class="published" itemprop="datePublished" title="2020-01-04 21:53:00-03:00">04 01 2020</abbr>
-                            </a>
-                        </span>
-                        <span class="reaction-buttons"></span>
-                        <span class="post-comment-link"></span>
-                        <span class="post-backlinks post-comment-link"></span>
-
-                        <div class="post-share-buttons goog-inline-block">
-                        </div>
-                    </div>
-                    <div class="post-footer-line post-footer-line-2"></div>
-                    <div class="post-footer-line post-footer-line-3">
-                        <span class="post-location"></span>
-                    </div>
-                </div>
+                </article><!-- /.card -->
             </div>
+            <div class="col-md-3 ml-auto">
+<aside class="sidebar">
+    <div class="card mb-4">
+        <div class="card-body">
+            <a href="https://flavialopes.dev/pages/flavia-lopes.html">
+                <div class="circular"
+                     style="background: url('https://flavialopes.dev/images/thumbnails/thumbnail_post/avatar.jpg') no-repeat; background-position: center;">
+                </div>
+            </a>
         </div>
-        <!-- TODO - Sitema de comentários: 1 - Implementar o sistema de comentários: instalar o disqus plugin
-        <div class="comments" id="comments">
-             <a name="comments"></a>
-             <h4>3 comments:</h4>
-             <div class="comments-content">
+        <div class="card-body">
+            <a href="https://flavialopes.dev/pages/flavia-lopes.html">
+                <h4 class="card-title">Flávia Lopes</h4>
+                <p class="card-text">
+                    Back-end Developer
+                    Interessada em Ciência de Dados, Código limpo, TDD, Python
+                </p>
+            </a>
+        </div>
+    </div><!-- /.card -->
+</aside>
 
-                 <script async="async" src="" type="text/javascript"></script>
-                 <script type="text/javascript">
-                     (function () {
-                         var items = null;
-                         var msgs = null;
-                         var config = {};
+<aside class="sidebar sidebar-sticky">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4 class="card-title">No GitHub</h4>
 
- // <![CDATA[
-                         var cursor = null;
-                         if (items && items.length > 0) {
-                             cursor = parseInt(items[items.length - 1].timestamp) + 1;
-                         }
-
-                         var bodyFromEntry = function (entry) {
-                             if (entry.gd$extendedProperty) {
-                                 for (var k in entry.gd$extendedProperty) {
-                                     if (entry.gd$extendedProperty[k].name == 'blogger.contentRemoved') {
-                                         return '<span class="deleted-comment">' + entry.content.$t + '</span>';
-                                     }
-                                 }
-                             }
-                             return entry.content.$t;
-                         }
-
-                         var parse = function (data) {
-                             cursor = null;
-                             var comments = [];
-                             if (data && data.feed && data.feed.entry) {
-                                 for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
-                                     var comment = {};
-                                     // comment ID, parsed out of the original id format
-                                     var id = /blog-(\d+).post-(\d+)/.exec(entry.id.$t);
-                                     comment.id = id ? id[2] : null;
-                                     comment.body = bodyFromEntry(entry);
-                                     comment.timestamp = Date.parse(entry.published.$t) + '';
-                                     if (entry.author && entry.author.constructor === Array) {
-                                         var auth = entry.author[0];
-                                         if (auth) {
-                                             comment.author = {
-                                                 name: (auth.name ? auth.name.$t : undefined),
-                                                 profileUrl: (auth.uri ? auth.uri.$t : undefined),
-                                                 avatarUrl: (auth.gd$image ? auth.gd$image.src : undefined)
-                                             };
-                                         }
-                                     }
-                                     if (entry.link) {
-                                         if (entry.link[2]) {
-                                             comment.link = comment.permalink = entry.link[2].href;
-                                         }
-                                         if (entry.link[3]) {
-                                             var pid = /.*comments\/default\/(\d+)\?.*/.exec(entry.link[3].href);
-                                             if (pid && pid[1]) {
-                                                 comment.parentId = pid[1];
-                                             }
-                                         }
-                                     }
-                                     comment.deleteclass = 'item-control blog-admin';
-                                     if (entry.gd$extendedProperty) {
-                                         for (var k in entry.gd$extendedProperty) {
-                                             if (entry.gd$extendedProperty[k].name == 'blogger.itemClass') {
-                                                 comment.deleteclass += ' ' + entry.gd$extendedProperty[k].value;
-                                             } else if (entry.gd$extendedProperty[k].name == 'blogger.displayTime') {
-                                                 comment.displayTime = entry.gd$extendedProperty[k].value;
-                                             }
-                                         }
-                                     }
-                                     comments.push(comment);
-                                 }
-                             }
-                             return comments;
-                         };
-
-                         var paginator = function (callback) {
-                             if (hasMore()) {
-                                 var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
-                                 if (cursor) {
-                                     url += '&published-min=' + new Date(cursor).toISOString();
-                                 }
-                                 window.bloggercomments = function (data) {
-                                     var parsed = parse(data);
-                                     cursor = parsed.length < 50 ? null
-                                         : parseInt(parsed[parsed.length - 1].timestamp) + 1
-                                     callback(parsed);
-                                     window.bloggercomments = null;
-                                 }
-                                 url += '&callback=bloggercomments';
-                                 var script = document.createElement('script');
-                                 script.type = 'text/javascript';
-                                 script.src = url;
-                                 document.getElementsByTagName('head')[0].appendChild(script);
-                             }
-                         };
-                         var hasMore = function () {
-                             return !!cursor;
-                         };
-                         var getMeta = function (key, comment) {
-                             if ('iswriter' == key) {
-                                 var matches = !!comment.author
-                                     && comment.author.name == config.authorName
-                                     && comment.author.profileUrl == config.authorUrl;
-                                 return matches ? 'true' : '';
-                             } else if ('deletelink' == key) {
-                                 return config.baseUri + '/delete-comment.g?blogID='
-                                     + config.blogId + '&postID=' + comment.id;
-                             } else if ('deleteclass' == key) {
-                                 return comment.deleteclass;
-                             }
-                             return '';
-                         };
-
-                         var replybox = null;
-                         var replyUrlParts = null;
-                         var replyParent = undefined;
-
-                         var onReply = function (commentId, domId) {
-                             if (replybox == null) {
-                                 // lazily cache replybox, and adjust to suit this style:
-                                 replybox = document.getElementById('comment-editor');
-                                 if (replybox != null) {
-                                     replybox.height = '250px';
-                                     replybox.style.display = 'block';
-                                     replyUrlParts = replybox.src.split('#');
-                                 }
-                             }
-                             if (replybox && (commentId !== replyParent)) {
-                                 replybox.src = '';
-                                 document.getElementById(domId).insertBefore(replybox, null);
-                                 replybox.src = replyUrlParts[0]
-                                     + (commentId ? '&parentID=' + commentId : '')
-                                     + '#' + replyUrlParts[1];
-                                 replyParent = commentId;
-                             }
-                         };
-
-                         var hash = (window.location.hash || '#').substring(1);
-                         var startThread, targetComment;
-                         if (/^comment-form_/.test(hash)) {
-                             startThread = hash.substring('comment-form_'.length);
-                         } else if (/^c[0-9]+$/.test(hash)) {
-                             targetComment = hash.substring(1);
-                         }
-
-                         // Configure commenting API:
-                         var configJso = {
-                             'maxDepth': config.maxThreadDepth
-                         };
-                         var provider = {
-                             'id': config.postId,
-                             'data': items,
-                             'loadNext': paginator,
-                             'hasMore': hasMore,
-                             'getMeta': getMeta,
-                             'onReply': onReply,
-                             'rendered': true,
-                             'initComment': targetComment,
-                             'initReplyThread': startThread,
-                             'config': configJso,
-                             'messages': msgs
-                         };
-
-                         var render = function () {
-                             if (window.goog && window.goog.comments) {
-                                 var holder = document.getElementById('comment-holder');
-                                 window.goog.comments.render(holder, provider);
-                             }
-                         };
-
-                         // render now, or queue to render when library loads:
-                         if (window.goog && window.goog.comments) {
-                             render();
-                         } else {
-                             window.goog = window.goog || {};
-                             window.goog.comments = window.goog.comments || {};
-                             window.goog.comments.loadQueue = window.goog.comments.loadQueue || [];
-                             window.goog.comments.loadQueue.push(render);
-                         }
-                     })();
-                     // ]]>
-                 </script>
-
-                 <div id="comment-holder">
-                     <div class="comment-thread toplevel-thread">
-                         <ol id="top-ra">
-                             <li class="comment" id="c1323072233749772679">
-                                 <div class="avatar-image-container">
-                                     <img class="comment-avatar-circle" src="https://flavialopes.dev/images/thumbnails/thumbnail_post/avatar.jpg" alt="">
-                                 </div>
-                                 <div class="comment-block">
-                                     <div class="comment-header">
-                                         <cite class="user">
-                                             <a href="https://flavialopes.dev/author/flavia-lopes.html" rel="nofollow">Flávia Lopes</a>
-                                         </cite>
-                                         <span class="icon user blog-author"></span>
-                                         <span class="datetime secondary-text">
-                                             <a rel="nofollow" href="#">Data do comentário</a>
-                                         </span>
-                                     </div>
-                                     <p class="comment-content">Este é um comentário. </p>
-                                     <span class="comment-actions secondary-text">
-                                         <a class="comment-reply" target="_self" data-comment-id="1323072233749772679"
-                                            href="javascript:;">Responder</a>
-                                         <span class="item-control blog-admin blog-admin pid-284863665">
-                                             <a target="_self"
-                                                href="#">Apagar</a>
-                                         </span>
-                                     </span>
-                                 </div>
-
-                                 <div class="comment-replies">
-                                     <div id="c1323072233749772679-rt" class="comment-thread inline-thread">
-                                         <span class="thread-toggle thread-expanded">
-                                             <span class="thread-arrow"></span>
-                                             <span class="thread-count">
-                                                 <a target="_self" href="javascript:;">Respostas</a>
-                                             </span>
-                                         </span>
-                                         <ol id="c1323072233749772679-ra" class="thread-chrome thread-expanded">
-                                             <div>
-                                                 <li class="comment" id="c1408670462899331238">
-                                                     <div class="avatar-image-container">
-                                                         <img src="/" alt="">
-                                                     </div>
-                                                     <div class="comment-block">
-                                                         <div class="comment-header">
-                                                             <cite class="user">
-                                                                 <a href="https://flavialopes.dev/author/flavia-lopes.html"
-                                                                    rel="nofollow">Flávia Lopes</a>
-                                                             </cite>
-                                                             <span class="icon user blog-author"></span>
-                                                             <span class="datetime secondary-text">
-                                                                 <a rel="nofollow" href="#">Data do comentário</a>
-                                                             </span>
-                                                         </div>
-                                                         <p class="comment-content">Este é um comentário. </p>
-                                                         <span class="comment-actions secondary-text">
-                                                             <a class="comment-reply" target="_self"
-                                                                data-comment-id="1323072233749772679"
-                                                                href="javascript:;">Responder</a>
-                                                             <span class="item-control blog-admin blog-admin pid-284863665">
-                                                                 <a target="_self" href="#">Apagar</a>
-                                                             </span>
-                                                         </span>
-                                                     </div>
-                                                     <div class="comment-replies">
-                                                         <div id="c1408670462899331238-rt"
-                                                              class="comment-thread inline-thread hidden">
-                                                             <span class="thread-toggle thread-expanded">
-                                                                 <span class="thread-arrow"></span>
-                                                                 <span class="thread-count">
-                                                                     <a target="_self"
-                                                                        href="javascript:;">Respostas</a></span>
-                                                             </span>
-                                                         </div>
-                                                     </div>
-                                                     <div class="comment-replybox-single"
-                                                          id="c1408670462899331238-ce"></div>
-                                                 </li>
-                                             </div>
-
-                                         </ol>
-                                     </div>
-                                 </div>
-                                 <div class="comment-replybox-single" id="c1323072233749772679-ce"></div>
-                             </li>
-                             <li class="comment" id="c1019587649399750182">
-                                 <div class="avatar-image-container">
-                                     <img class="comment-avatar-circle" src="" alt="">
-                                 </div>
-                                 <div class="comment-block">
-                                     <div class="comment-header">
-                                         <cite class="user">
-                                             <a href="https://flavialopes.dev/author/flavia-lopes.html" rel="nofollow">Flávia Lopes</a>
-                                         </cite>
-                                         <span class="icon user blog-author"></span>
-                                         <span class="datetime secondary-text">
-                                             <a rel="nofollow" href="#">Data do comentário</a>
-                                         </span>
-                                     </div>
-                                     <p class="comment-content">Este é um comentário. </p>
-                                     <span class="comment-actions secondary-text">
-                                         <a class="comment-reply" target="_self" data-comment-id="1323072233749772679"
-                                            href="javascript:;">Responder</a>
-                                         <span class="item-control blog-admin blog-admin pid-284863665">
-                                             <a target="_self"
-                                                href="#">Apagar</a>
-                                         </span>
-                                     </span>
-                                 </div>
-
-                                 <div class="comment-replies">
-                                     <div id="c1323072233749772679-rt" class="comment-thread inline-thread">
-                                         <span class="thread-toggle thread-expanded">
-                                             <span class="thread-arrow"></span>
-                                             <span class="thread-count">
-                                                 <a target="_self" href="javascript:;">Respostas</a>
-                                             </span>
-                                         </span>
-                                         <ol id="c1323072233749772679-ra" class="thread-chrome thread-expanded">
-                                             <div>
-                                                 <li class="comment" id="c1408670462899331238">
-                                                     <div class="avatar-image-container">
-                                                         <img src="/" alt="">
-                                                     </div>
-                                                     <div class="comment-block">
-                                                         <div class="comment-header">
-                                                             <cite class="user">
-                                                                 <a href="https://flavialopes.dev/author/flavia-lopes.html"
-                                                                    rel="nofollow">Flávia Lopes</a>
-                                                             </cite>
-                                                             <span class="icon user blog-author"></span>
-                                                             <span class="datetime secondary-text">
-                                                                 <a rel="nofollow" href="#">Data do comentário</a>
-                                                             </span>
-                                                         </div>
-                                                         <p class="comment-content">Este é um comentário. </p>
-                                                         <span class="comment-actions secondary-text">
-                                                             <a class="comment-reply" target="_self"
-                                                                data-comment-id="1323072233749772679"
-                                                                href="javascript:;">Responder</a>
-                                                             <span class="item-control blog-admin blog-admin pid-284863665">
-                                                                 <a target="_self" href="#">Apagar</a>
-                                                             </span>
-                                                         </span>
-                                                     </div>
-                                                     <div class="comment-replies">
-                                                         <div id="c1408670462899331238-rt"
-                                                              class="comment-thread inline-thread hidden">
-                                                             <span class="thread-toggle thread-expanded">
-                                                                 <span class="thread-arrow"></span>
-                                                                 <span class="thread-count">
-                                                                     <a target="_self"
-                                                                        href="javascript:;">Respostas</a></span>
-                                                             </span>
-                                                         </div>
-                                                     </div>
-                                                     <div class="comment-replybox-single"
-                                                          id="c1408670462899331238-ce"></div>
-                                                 </li>
-                                             </div>
-
-                                         </ol>
-                                     </div>
-                                 </div>
-                                 <div class="comment-replybox-single" id="c1323072233749772679-ce"></div>
-                             </li>
-                         </ol>
-
-
-                         <div id="top-continue" class="continue hidden">
-                             <a class="comment-reply" target="_self" href="javascript:;">
-                                 Add comment</a>
-                         </div>
-
-                         <div class="comment-replybox-thread" id="top-ce">
-                             <iframe allowtransparency="true"
-                                     class="blogger-iframe-colorize blogger-comment-from-post"
-                                     frameborder="0" height="194px" id="comment-editor"
-                                     name="comment-editor"
-                                     src="https://www.blogger.com/comment-iframe.g?blogID=6235283326416667399&amp;postID=2343630507570872169&amp;blogspotRpcToken=8388732#%7B%22color%22:%22rgb(46,%2046,%2046)%22,%22backgroundColor%22:%22rgb(255,%20255,%20255)%22,%22unvisitedLinkColor%22:%22rgb(0,%200,%200)%22,%22fontFamily%22:%22Roboto,%20sans-serif%22%7D"
-                                     width="100%" style="display: block;" data-resized="true">
-
-                             </iframe>
-                         </div>
-                         <div class="loadmore hidden" data-post-id="2343630507570872169">
-                             <a target="_self">Load more...</a>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-
-            <p class="comment-footer">
-            </p>
-
-            <div class="comment-form">
-                <iframe allowtransparency="true"
-                        frameborder="0" height="194px" name="comment-editor"
-                        src=""
-                        width="100%" style="display: block;" data-resized="true"></iframe>
+                    <a href="https://www.github.com/FlaviaLopes/Genetic-Algorithm" class="mb-1 btn-light" target="_blank">
+                        <h4 class="h6">Genetic Algorithm with Python</h4>
+                    </a>
+                    <a href="https://www.github.com/FlaviaLopes/AceleraDev-Codenation-Data-Science" class="mb-1 btn-light" target="_blank">
+                        <h4 class="h6">Acelera Dev Data Science</h4>
+                    </a>
+                    <a href="https://www.github.com/FlaviaLopes/Eleicoes-2018" class="mb-1 btn-light" target="_blank">
+                        <h4 class="h6">Eleições 2018</h4>
+                    </a>
             </div>
-            <p></p>
-            <div id="backlinks-container">
-                <div id="Blog1_backlinks-container">
-                </div>
-            </div>
+        </div><!-- /.card -->
+</aside>            </div>
         </div>
     </div>
+</main>
 
-</div>
 
-</div>
 
-<footer class="footer">
-    &copy <a href="https://flavialopes.dev/pages/flavia-lopes.html">Flávia Lopes</a>. 2020
-    <br/>
-    Tema <a href="http://getpelican.com/">Pelican</a> <a href="http://github.com/liyuan-t/ops">ops</a> adaptado por
-    <a href="https://flavialopes.dev/pages/flavia-lopes.html">Flávia Lopes</a>
-    <br/>
+<footer class="site-footer bg-darkest">
+    <div class="container">
+<ul class="nav justify-content-center">
+
+        <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/_flavialopes_" target="_blank">
+                <img class="social-icon" src="https://flavialopes.dev/theme/images/twitter-128.png" style="width: 64px;">
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://linkedin.com/in/lopesflavia" target="_blank">
+                <img class="social-icon" src="https://flavialopes.dev/theme/images/linkedin-128.png" style="width: 64px;">
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/FlaviaLopes" target="_blank">
+                <img class="social-icon" src="https://flavialopes.dev/theme/images/github-128.png" style="width: 64px;">
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://instagram.com/_flavialopes_" target="_blank">
+                <img class="social-icon" src="https://flavialopes.dev/theme/images/instagram-128.png" style="width: 64px;">
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://facebook.com/flavialopesads" target="_blank">
+                <img class="social-icon" src="https://flavialopes.dev/theme/images/facebook-128.png" style="width: 64px;">
+            </a>
+        </li>
+</ul>
+<div class="copy">
+    &copy; Tema: <a class="card-link" href="https://milo.bootlab.io/" target="_blank    ">Milo 2020</a><br/>
+    Modificado por <a class="card-link" href="https://flavialopes.dev/pages/flavia-lopes.html">Flávia Lopes</a><br/>
+    All rights reserved
+</div>    </div>
 </footer>
+
+<script src="https://flavialopes.dev/theme/js/app.js"></script>
 </body>
 </html>
